@@ -1,0 +1,738 @@
+.revnoBlogDetails {
+  background: #f7faf9;
+  color: #101828;
+  overflow-x: hidden;
+}
+
+.revnoBlogContainer {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* HERO */
+.revnoBlogHero {
+  position: relative;
+  height: 560px;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+
+.revnoBlogHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(1, 34, 70, 0.94) 0%,
+    rgba(2, 65, 125, 0.84) 48%,
+    rgba(5, 28, 68, 0.72) 100%
+  );
+  z-index: 1;
+}
+
+.revnoBlogHeroContent {
+  position: relative;
+  z-index: 2;
+  padding: 0;
+}
+
+.revnoHeroTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.revnoBackLink {
+  display: inline-flex;
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.revnoBackLink:hover {
+  color: #7ff7df;
+}
+
+.revnoBlogCategory {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.13);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 9px 15px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.revnoBlogHero h1 {
+  max-width: 820px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(44px, 5.8vw, 72px);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.revnoBlogExcerpt {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 19px;
+  line-height: 1.75;
+  font-weight: 700;
+}
+
+.revnoBlogMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.revnoAuthorChip {
+  border: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px 8px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: 0.25s ease;
+}
+
+.revnoAuthorChip:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.revnoAuthorChip img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #029a82;
+}
+
+.revnoAuthorChip strong {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.revnoAuthorChip small {
+  display: block;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.revnoBlogDate {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 900;
+}
+
+/* FEATURED IMAGE */
+.revnoBlogFeatureCompact {
+  background: #f7faf9;
+  padding: 42px 0 0;
+}
+
+.revnoBlogFeatureCard {
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 22px 60px rgba(16, 24, 40, 0.12);
+  padding: 16px;
+}
+
+.revnoBlogFeatureCompactImg {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #ffffff;
+}
+
+/* CONTENT */
+.revnoBlogContentWrap {
+  padding: 46px 0 70px;
+  background: #f7faf9;
+}
+
+.revnoBlogContentGrid {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 34px;
+  align-items: start;
+}
+
+.revnoBlogArticle {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: clamp(24px, 5vw, 54px);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 22px 60px rgba(16, 24, 40, 0.08);
+}
+
+.revnoBlogArticle h1,
+.revnoBlogArticle h2,
+.revnoBlogArticle h3,
+.revnoBlogArticle h4 {
+  color: #101828;
+  margin: 32px 0 14px;
+  line-height: 1.22;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+.revnoBlogArticle h1 {
+  font-size: clamp(34px, 5vw, 52px);
+}
+
+.revnoBlogArticle h2 {
+  font-size: clamp(28px, 4vw, 38px);
+}
+
+.revnoBlogArticle h3 {
+  font-size: 26px;
+}
+
+.revnoBlogArticle p {
+  color: #344054;
+  font-size: 19px;
+  line-height: 1.9;
+  margin: 0 0 22px;
+}
+
+.revnoBlogArticle ul,
+.revnoBlogArticle ol {
+  margin: 0 0 26px 24px;
+  padding-left: 20px;
+}
+
+.revnoBlogArticle li {
+  color: #344054;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.revnoBlogArticle img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #ffffff;
+  border-radius: 22px;
+  margin: 28px 0;
+}
+
+.revnoBlogArticle blockquote {
+  margin: 32px 0;
+  padding: 22px 26px;
+  border-left: 5px solid #029a82;
+  background: #eaf8f5;
+  border-radius: 16px;
+  color: #1d2939;
+  font-style: italic;
+}
+
+.revnoBlogArticle a {
+  color: #029a82;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+.revnoBlogArticle pre {
+  background: #101828;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  overflow-x: auto;
+}
+
+/* SIDEBAR */
+.revnoBlogSidebar {
+  display: grid;
+  gap: 18px;
+  position: sticky;
+  top: 110px;
+}
+
+.revnoSidebarBox {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  box-shadow: 0 18px 48px rgba(16, 24, 40, 0.07);
+}
+
+.revnoSidebarBox.dark {
+  background: linear-gradient(135deg, #07131f, #082a2b);
+  color: #ffffff;
+}
+
+.revnoSidebarBox h3 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.revnoSidebarBox p {
+  margin: 0 0 16px;
+  color: #667085;
+  line-height: 1.65;
+}
+
+.revnoSidebarBox.dark p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.revnoSidebarBox p strong {
+  display: block;
+  color: #101828;
+  margin-bottom: 4px;
+}
+
+.revnoSidebarBox p span {
+  color: #667085;
+}
+
+.revnoSidebarBox a {
+  display: inline-flex;
+  background: #029a82;
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+/* COMMENTS */
+.revnoCommentsSection {
+  padding: 0 0 80px;
+  background: #f7faf9;
+}
+
+.revnoCommentsBox {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 28px;
+  padding: clamp(24px, 4vw, 42px);
+  box-shadow: 0 22px 60px rgba(16, 24, 40, 0.08);
+}
+
+.revnoCommentsHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.revnoCommentsIcon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #eaf8f5, #f3fbff);
+  color: #029a82;
+  border: 1px solid rgba(2, 154, 130, 0.16);
+  flex: 0 0 auto;
+}
+
+.revnoCommentsHeader h2 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 900;
+  color: #101828;
+}
+
+.revnoCommentsHeader p {
+  margin: 6px 0 0;
+  color: #667085;
+  line-height: 1.6;
+}
+
+.revnoCommentForm {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 34px;
+  padding: 22px;
+  border-radius: 22px;
+  background: #f9fafb;
+  border: 1px solid #eef2f4;
+}
+
+.revnoCommentRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.revnoInputGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: #101828;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.revnoCommentForm input,
+.revnoCommentForm textarea {
+  width: 100%;
+  border: 1px solid #d0d5dd;
+  border-radius: 14px;
+  padding: 14px 15px;
+  outline: none;
+  font-size: 15px;
+  background: #ffffff;
+}
+
+.revnoCommentForm textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.revnoCommentForm input:focus,
+.revnoCommentForm textarea:focus {
+  border-color: #029a82;
+  box-shadow: 0 0 0 4px rgba(2, 154, 130, 0.11);
+}
+
+.revnoPostCommentBtn {
+  width: fit-content;
+  border: 0;
+  background: linear-gradient(135deg, #029a82, #00b89c);
+  color: #ffffff;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 16px 34px rgba(2, 154, 130, 0.22);
+}
+
+.revnoPostCommentBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.revnoCommentList {
+  display: grid;
+  gap: 14px;
+}
+
+.revnoCommentCard {
+  display: flex;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 18px;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.04);
+}
+
+.revnoCommentAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #eaf8f5;
+  color: #029a82;
+  font-weight: 900;
+  flex: 0 0 auto;
+}
+
+.revnoCommentContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.revnoCommentTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.revnoCommentTop strong {
+  color: #101828;
+  font-size: 16px;
+}
+
+.revnoCommentTop span {
+  color: #98a2b3;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.revnoCommentContent p {
+  color: #475467;
+  margin: 8px 0 0;
+  line-height: 1.7;
+}
+
+.revnoNoComments {
+  min-height: 120px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #667085;
+  background: #f9fafb;
+  padding: 24px;
+}
+
+.revnoNoComments svg {
+  color: #029a82;
+  margin-bottom: 8px;
+}
+
+.revnoNoComments p {
+  margin: 0;
+  font-weight: 800;
+}
+
+/* AUTHOR MODAL */
+.revnoAuthorModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 24, 40, 0.68);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 99999;
+}
+
+.revnoAuthorModal {
+  width: min(460px, 100%);
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+.revnoAuthorModalClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: 0;
+  background: #f2f4f7;
+  color: #101828;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.revnoAuthorModalImg {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #eaf8f5;
+  background: #029a82;
+}
+
+.revnoAuthorModal h2 {
+  margin: 16px 0 6px;
+  color: #101828;
+}
+
+.revnoAuthorRole {
+  color: #029a82;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.revnoAuthorInfo {
+  text-align: left;
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 18px;
+  color: #475467;
+}
+
+.revnoAuthorInfo p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+/* LOADING */
+.revnoBlogDetailsLoading {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #f7faf9;
+  color: #667085;
+  font-weight: 800;
+}
+
+.revnoBlogDetailsLoading a {
+  color: #029a82;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .revnoBlogHero {
+    height: 500px;
+    min-height: 500px;
+  }
+
+  .revnoBlogHero h1 {
+    max-width: 760px;
+    font-size: 52px;
+  }
+
+  .revnoBlogExcerpt {
+    font-size: 17px;
+  }
+
+  .revnoBlogContentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .revnoBlogSidebar {
+    position: static;
+  }
+
+  .revnoBlogFeatureCompactImg {
+    max-height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .revnoBlogHero {
+    height: 460px;
+    min-height: 460px;
+  }
+
+  .revnoBlogHero h1 {
+    font-size: 42px;
+  }
+
+  .revnoBlogExcerpt {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .revnoBlogMeta {
+    margin-top: 24px;
+  }
+
+  .revnoCommentRow {
+    grid-template-columns: 1fr;
+  }
+
+  .revnoCommentsHeader {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .revnoBlogContainer,
+  .revnoBlogContentGrid {
+    width: min(100% - 24px, 1120px);
+  }
+
+  .revnoBlogFeatureCompact {
+    padding: 28px 0 0;
+  }
+
+  .revnoBlogFeatureCard {
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .revnoBlogFeatureCompactImg {
+    max-height: 320px;
+  }
+
+  .revnoBlogContentWrap {
+    padding: 32px 0 56px;
+  }
+
+  .revnoBlogArticle {
+    border-radius: 20px;
+  }
+
+  .revnoBlogArticle p {
+    font-size: 17px;
+  }
+
+  .revnoCommentForm {
+    padding: 18px;
+  }
+
+  .revnoPostCommentBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .revnoBlogHero {
+    height: 430px;
+    min-height: 430px;
+    background-position: center center;
+  }
+
+  .revnoBlogHeroOverlay {
+    background: linear-gradient(
+      90deg,
+      rgba(1, 34, 70, 0.96) 0%,
+      rgba(2, 65, 125, 0.9) 100%
+    );
+  }
+
+  .revnoBlogHero h1 {
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .revnoBlogExcerpt {
+    margin-top: 18px;
+    font-size: 15px;
+  }
+
+  .revnoAuthorChip {
+    width: 100%;
+  }
+
+  .revnoBlogFeatureCompactImg,
+  .revnoBlogArticle img {
+    max-height: 240px;
+  }
+}

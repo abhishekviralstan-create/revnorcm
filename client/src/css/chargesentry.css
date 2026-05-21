@@ -1,0 +1,859 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --revno-blue: #002f68;
+  --revno-blue-2: #0056a6;
+  --revno-cyan: #00a6e7;
+  --revno-green: #72bf16;
+  --revno-green-2: #5ba80f;
+  --revno-text: #26384c;
+  --revno-muted: #66758a;
+  --revno-dark: #10233d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.charges-page {
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: var(--revno-text);
+  font-family: "Manrope", sans-serif;
+}
+
+.charges-container {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* HERO */
+.charges-hero {
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 64px 0 58px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(114, 191, 22, 0.2), transparent 30%),
+    radial-gradient(circle at 88% 20%, rgba(0, 166, 231, 0.2), transparent 32%),
+    linear-gradient(135deg, #001e44 0%, #003e84 52%, #061c49 100%);
+}
+
+.charges-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.13) 1px, transparent 1px);
+  background-size: 44px 44px;
+  animation: chargesGridMove 16s linear infinite;
+}
+
+.charges-hero .charges-container {
+  position: relative;
+  z-index: 2;
+}
+
+.charges-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.charges-breadcrumb button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #9dff3e;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.charges-hero h1 {
+  max-width: 900px;
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+}
+
+.charges-hero p {
+  max-width: 760px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 17px;
+  line-height: 1.8;
+  font-weight: 650;
+}
+
+/* REVEAL */
+.charges-reveal {
+  opacity: 0;
+  transform: translateY(42px);
+  filter: blur(7px);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s ease;
+  transition-delay: var(--charges-delay, 0ms);
+}
+
+.charges-reveal-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  filter: blur(0) !important;
+}
+
+/* STATS */
+.charges-stats-section {
+  padding: 54px 0;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.charges-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.charges-stat-card,
+.charges-feature-card,
+.charges-benefit-card,
+.charges-process-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(0, 47, 104, 0.11);
+  box-shadow:
+    0 10px 24px rgba(0, 47, 104, 0.08),
+    0 24px 64px rgba(0, 47, 104, 0.1),
+    0 2px 8px rgba(0, 47, 104, 0.05);
+  transition: all 0.35s ease;
+}
+
+.charges-stat-card {
+  padding: 30px 26px;
+  border-radius: 24px;
+}
+
+.charges-stat-card::before,
+.charges-feature-card::before,
+.charges-benefit-card::before,
+.charges-process-card::before,
+.charges-flow-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background:
+    radial-gradient(circle at top right, rgba(114, 191, 22, 0.18), transparent 34%),
+    linear-gradient(135deg, #002f68, #0056a6 60%, #007a9c);
+  transition: opacity 0.35s ease;
+}
+
+.charges-stat-card:hover,
+.charges-feature-card:hover,
+.charges-benefit-card:hover,
+.charges-process-card:hover {
+  transform: translateY(-9px);
+  border-color: rgba(114, 191, 22, 0.45);
+  box-shadow:
+    0 18px 42px rgba(0, 47, 104, 0.16),
+    0 38px 95px rgba(0, 47, 104, 0.16);
+}
+
+.charges-stat-card:hover::before,
+.charges-feature-card:hover::before,
+.charges-benefit-card:hover::before,
+.charges-process-card:hover::before,
+.charges-flow-item:hover::before {
+  opacity: 1;
+}
+
+.charges-stat-card h3 {
+  margin: 0 0 8px;
+  color: var(--revno-blue);
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 900;
+  transition: color 0.35s ease;
+}
+
+.charges-stat-card p {
+  margin: 0;
+  color: var(--revno-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 800;
+  transition: color 0.35s ease;
+}
+
+.charges-stat-card:hover h3 {
+  color: #9dff3e;
+}
+
+.charges-stat-card:hover p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* COMMON */
+.charges-section {
+  padding: 92px 0;
+  overflow: hidden;
+}
+
+.charges-white {
+  background: #ffffff;
+}
+
+.charges-soft {
+  background:
+    radial-gradient(circle at top right, rgba(114, 191, 22, 0.1), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #eef7ff 100%);
+}
+
+.charges-split-grid,
+.charges-flow-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 58px;
+  align-items: center;
+}
+
+.charges-split-grid.reverse {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+.charges-kicker,
+.charges-head span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--revno-green);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.charges-copy h2,
+.charges-head h2 {
+  margin: 0;
+  color: var(--revno-blue);
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.18;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+.charges-copy p,
+.charges-head p {
+  margin: 0 0 18px;
+  color: var(--revno-muted);
+  font-size: 16px;
+  line-height: 1.85;
+  font-weight: 650;
+}
+
+.charges-title-line {
+  width: 82px;
+  height: 4px;
+  margin: 18px 0 24px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--revno-blue),
+    var(--revno-cyan),
+    var(--revno-green)
+  );
+}
+
+.charges-copy button,
+.charges-final-cta button {
+  position: relative;
+  overflow: hidden;
+  min-height: 50px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--revno-green), var(--revno-green-2));
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 18px 42px rgba(114, 191, 22, 0.24);
+  transition: all 0.35s ease;
+}
+
+.charges-copy button:hover,
+.charges-final-cta button:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, var(--revno-blue), var(--revno-blue-2));
+}
+
+/* IMAGE */
+.charges-image-wrap {
+  position: relative;
+  min-height: 520px;
+  border-radius: 34px;
+  overflow: hidden;
+  background: #eaf4ff;
+  box-shadow: 0 30px 90px rgba(0, 47, 104, 0.22);
+  isolation: isolate;
+}
+
+.charges-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(circle at top right, rgba(114, 191, 22, 0.25), transparent 34%),
+    linear-gradient(180deg, rgba(0, 47, 104, 0.04), rgba(0, 47, 104, 0.68));
+  pointer-events: none;
+}
+
+.charges-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  z-index: 3;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  pointer-events: none;
+}
+
+.charges-image-wrap img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.75s ease, filter 0.75s ease;
+}
+
+.charges-image-wrap:hover img {
+  transform: scale(1.08);
+  filter: saturate(1.12) contrast(1.04);
+}
+
+.charges-image-badge {
+  position: absolute;
+  z-index: 5;
+  min-width: 185px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 42px rgba(0, 20, 55, 0.2);
+  animation: chargesBadgeFloat 3s ease-in-out infinite;
+}
+
+.charges-image-badge.top {
+  top: 34px;
+  left: 28px;
+}
+
+.charges-image-badge.middle {
+  right: 28px;
+  top: 45%;
+  animation-delay: 0.3s;
+}
+
+.charges-image-badge.bottom {
+  left: 40px;
+  bottom: 34px;
+  animation-delay: 0.6s;
+}
+
+.charges-image-badge strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--revno-blue);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.charges-image-badge span {
+  display: block;
+  color: var(--revno-muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* HEAD */
+.charges-head {
+  max-width: 830px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+/* PROCESS */
+.charges-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.charges-process-card {
+  border-radius: 28px;
+}
+
+.charges-process-image {
+  position: relative;
+  z-index: 3;
+  height: 170px;
+  overflow: hidden;
+}
+
+.charges-process-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(circle at top right, rgba(114, 191, 22, 0.2), transparent 34%),
+    linear-gradient(180deg, rgba(0, 47, 104, 0.02), rgba(0, 47, 104, 0.58));
+  pointer-events: none;
+}
+
+.charges-process-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease, filter 0.7s ease;
+}
+
+.charges-process-card:hover .charges-process-image img {
+  transform: scale(1.12);
+  filter: saturate(1.12) contrast(1.04);
+}
+
+.charges-process-image span {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  z-index: 4;
+  width: 46px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--revno-blue);
+  font-size: 14px;
+  font-weight: 900;
+  transition: all 0.35s ease;
+}
+
+.charges-process-body {
+  position: relative;
+  z-index: 3;
+  padding: 24px;
+}
+
+.charges-process-body h3 {
+  margin: 0 0 10px;
+  color: var(--revno-blue);
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 900;
+  transition: color 0.35s ease;
+}
+
+.charges-process-body p {
+  margin: 0;
+  color: var(--revno-muted);
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 650;
+  transition: color 0.35s ease;
+}
+
+.charges-process-card:hover .charges-process-body h3,
+.charges-process-card:hover .charges-process-body p {
+  color: #ffffff;
+}
+
+.charges-process-card:hover .charges-process-image span {
+  background: linear-gradient(135deg, var(--revno-green), var(--revno-green-2));
+  color: #ffffff;
+}
+
+/* FEATURES */
+.charges-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.charges-feature-card {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  padding: 22px;
+  border-radius: 22px;
+}
+
+.charges-feature-card span {
+  width: 46px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 46px;
+  border-radius: 999px;
+  background: rgba(114, 191, 22, 0.14);
+  color: var(--revno-green);
+  font-size: 14px;
+  font-weight: 900;
+  transition: all 0.35s ease;
+}
+
+.charges-feature-card p {
+  margin: 0;
+  color: var(--revno-dark);
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 750;
+  transition: color 0.35s ease;
+}
+
+.charges-feature-card:hover span {
+  background: rgba(255, 255, 255, 0.16);
+  color: #9dff3e;
+}
+
+.charges-feature-card:hover p {
+  color: #ffffff;
+}
+
+/* FLOW */
+.charges-flow-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 32px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top right, rgba(114, 191, 22, 0.18), transparent 34%),
+    linear-gradient(135deg, #002f68 0%, #0056a6 58%, #061c49 100%);
+  box-shadow: 0 34px 95px rgba(0, 47, 104, 0.26);
+}
+
+.charges-flow-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 42px 42px;
+  animation: chargesGridMove 16s linear infinite;
+}
+
+.charges-flow-item {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 58px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 10px 24px rgba(0, 20, 55, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.35s ease;
+}
+
+.charges-flow-item:not(:last-child) {
+  margin-bottom: 13px;
+}
+
+.charges-flow-item:hover {
+  transform: translateX(8px);
+  background: rgba(114, 191, 22, 0.18);
+  border-color: rgba(157, 255, 62, 0.36);
+}
+
+.charges-flow-item span {
+  width: 42px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #9dff3e;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.charges-flow-item p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+/* BENEFITS */
+.charges-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.charges-benefit-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 22px;
+  border-radius: 22px;
+}
+
+.charges-benefit-card strong {
+  color: var(--revno-green);
+  font-size: 18px;
+  font-weight: 900;
+  transition: color 0.35s ease;
+}
+
+.charges-benefit-card p {
+  margin: 0;
+  color: var(--revno-dark);
+  font-size: 14.5px;
+  line-height: 1.7;
+  font-weight: 750;
+  transition: color 0.35s ease;
+}
+
+.charges-benefit-card:hover strong {
+  color: #9dff3e;
+}
+
+.charges-benefit-card:hover p {
+  color: #ffffff;
+}
+
+/* CTA */
+.charges-final-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 88px 0;
+  text-align: center;
+  background:
+    radial-gradient(circle at top left, rgba(114, 191, 22, 0.22), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(0, 166, 231, 0.22), transparent 30%),
+    linear-gradient(135deg, #002f68 0%, #0056a6 55%, #061c49 100%);
+}
+
+.charges-final-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.13) 1px, transparent 1px);
+  background-size: 44px 44px;
+  animation: chargesGridMove 16s linear infinite;
+}
+
+.charges-final-cta .charges-container {
+  position: relative;
+  z-index: 2;
+}
+
+.charges-final-cta h2 {
+  max-width: 780px;
+  margin: 0 auto 16px;
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.18;
+  font-weight: 900;
+}
+
+.charges-final-cta p {
+  max-width: 720px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 650;
+}
+
+/* KEYFRAMES */
+@keyframes chargesGridMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 44px 44px;
+  }
+}
+
+@keyframes chargesBadgeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .charges-split-grid,
+  .charges-split-grid.reverse,
+  .charges-flow-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .charges-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charges-image-wrap,
+  .charges-image-wrap img {
+    min-height: 430px;
+  }
+}
+
+@media (max-width: 768px) {
+  .charges-container {
+    width: min(100% - 28px, 640px);
+  }
+
+  .charges-hero {
+    min-height: 310px;
+    padding: 56px 0 50px;
+  }
+
+  .charges-hero h1 {
+    font-size: 38px;
+  }
+
+  .charges-hero p {
+    font-size: 15px;
+  }
+
+  .charges-stats-grid,
+  .charges-process-grid,
+  .charges-feature-grid,
+  .charges-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .charges-section,
+  .charges-final-cta {
+    padding: 68px 0;
+  }
+
+  .charges-image-wrap,
+  .charges-image-wrap img {
+    min-height: 380px;
+  }
+
+  .charges-copy p,
+  .charges-head p,
+  .charges-final-cta p {
+    font-size: 14.5px;
+  }
+
+  .charges-image-badge {
+    min-width: 150px;
+    padding: 12px 13px;
+    border-radius: 15px;
+  }
+
+  .charges-image-badge.top {
+    top: 22px;
+    left: 18px;
+  }
+
+  .charges-image-badge.middle {
+    right: 18px;
+  }
+
+  .charges-image-badge.bottom {
+    left: 20px;
+    bottom: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .charges-container {
+    width: min(100% - 22px, 420px);
+  }
+
+  .charges-hero {
+    min-height: 280px;
+    padding: 44px 0 42px;
+  }
+
+  .charges-hero h1 {
+    font-size: 32px;
+  }
+
+  .charges-stat-card,
+  .charges-process-body,
+  .charges-feature-card,
+  .charges-benefit-card,
+  .charges-flow-panel {
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  .charges-image-wrap,
+  .charges-image-wrap img {
+    min-height: 330px;
+  }
+
+  .charges-image-badge {
+    min-width: 132px;
+  }
+
+  .charges-image-badge strong {
+    font-size: 12.5px;
+  }
+
+  .charges-image-badge span {
+    font-size: 11px;
+  }
+
+  .charges-flow-item,
+  .charges-feature-card,
+  .charges-benefit-card {
+    align-items: flex-start;
+  }
+}

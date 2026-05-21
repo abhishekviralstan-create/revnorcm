@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.revnorcm.com/sitemap.xml
+
+# Block unnecessary folders
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /api/
+
+# Allow important assets
+Allow: /assets/
+Allow: /images/
+
+# Crawl delay (optional)
+Crawl-delay: 2

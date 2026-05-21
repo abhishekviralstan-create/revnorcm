@@ -1,0 +1,665 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --blog-blue: #002f68;
+  --blog-blue-2: #0056a6;
+  --blog-cyan: #00a6e7;
+  --blog-green: #72bf16;
+  --blog-green-2: #5ba80f;
+  --blog-bg: #f4f9ff;
+  --blog-text: #26384c;
+  --blog-muted: #66758a;
+  --blog-dark: #10233d;
+  --blog-white: #ffffff;
+  --blog-shadow: 0 24px 70px rgba(0, 47, 104, 0.12);
+}
+
+.revnoBlogsPage {
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: var(--blog-text);
+  font-family: "Manrope", sans-serif;
+}
+
+.revnoBlogsPage * {
+  box-sizing: border-box;
+}
+
+.revnoBlogsContainer {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* HERO SAME AS SERVICE PAGES */
+.revnoBlogsHero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 78px 0 68px;
+  background:
+    linear-gradient(90deg, rgba(9, 53, 65, 0.92) 0%, rgba(0, 47, 104, 0.98) 46%, rgba(0, 68, 145, 0.96) 100%),
+    radial-gradient(circle at top left, rgba(114, 191, 22, 0.18), transparent 32%);
+}
+
+.revnoBlogsHero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.revnoBlogsHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(114, 191, 22, 0.16), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(0, 166, 231, 0.16), transparent 30%);
+  pointer-events: none;
+}
+
+.revnoBlogsHero .revnoBlogsContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.revnoBlogsBreadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.revnoBlogsBreadcrumb a {
+  color: #9dff3e;
+  text-decoration: none;
+}
+
+.revnoBlogsBreadcrumb span {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.revnoBlogsBreadcrumb strong {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.revnoBlogsBadge,
+.revnoBlogsSectionHead span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--blog-green);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.revnoBlogsHero .revnoBlogsBadge {
+  color: #9dff3e;
+}
+
+.revnoBlogsHero h1 {
+  max-width: 980px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.055em;
+}
+
+.revnoBlogsHero p {
+  max-width: 800px;
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 17px;
+  line-height: 1.8;
+  font-weight: 800;
+}
+
+/* LIST SECTION */
+.revnoBlogsListSection {
+  position: relative;
+  padding: 92px 0;
+  background:
+    radial-gradient(circle at top right, rgba(114, 191, 22, 0.12), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(0, 166, 231, 0.12), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #eaf5ff 100%);
+  overflow: hidden;
+}
+
+.revnoBlogsListSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image:
+    linear-gradient(to right, rgba(0, 47, 104, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 47, 104, 0.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.revnoBlogsListSection .revnoBlogsContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.revnoBlogsSectionHead {
+  max-width: 840px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.revnoBlogsSectionHead h2 {
+  margin: 0;
+  color: var(--blog-blue);
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.18;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+.revnoBlogsSectionHead p {
+  max-width: 760px;
+  margin: 16px auto 0;
+  color: var(--blog-muted);
+  font-size: 16px;
+  line-height: 1.85;
+  font-weight: 600;
+}
+
+/* HOME PAGE STYLE BLOG CARDS */
+.revnoBlogsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  perspective: 1200px;
+}
+
+.revnoBlogCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100%;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 47, 104, 0.1);
+  box-shadow: 0 20px 52px rgba(0, 47, 104, 0.1);
+  transform-style: preserve-3d;
+  transition: all 0.35s ease;
+}
+
+.revnoBlogCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top right, rgba(114, 191, 22, 0.22), transparent 35%),
+    linear-gradient(135deg, #002f68 0%, #0056a6 55%, #006f8f 100%);
+  transition: opacity 0.35s ease;
+}
+
+.revnoBlogCard:hover,
+.revnoBlogCard.blogClickActive {
+  transform: translateY(-10px) scale(1.015);
+  border-color: rgba(114, 191, 22, 0.48);
+  box-shadow: 0 32px 85px rgba(0, 47, 104, 0.24);
+}
+
+.revnoBlogCard:hover::before,
+.revnoBlogCard.blogClickActive::before {
+  opacity: 1;
+}
+
+.revnoBlogCardImage,
+.revnoBlogCardBody {
+  position: relative;
+  z-index: 2;
+}
+
+.revnoBlogCardImage {
+  display: block;
+  height: 210px;
+  overflow: hidden;
+  background: #eaf4ff;
+  text-decoration: none;
+}
+
+.revnoBlogCardImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-130%);
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 35%,
+    rgba(255, 255, 255, 0.78) 50%,
+    rgba(157, 255, 62, 0.24) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.revnoBlogCard:hover .revnoBlogCardImage::after,
+.revnoBlogCard.blogClickActive .revnoBlogCardImage::after {
+  animation: blogImageShimmer 1.4s ease;
+}
+
+.revnoBlogCardImage img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.revnoBlogCard:hover .revnoBlogCardImage img,
+.revnoBlogCard.blogClickActive .revnoBlogCardImage img {
+  transform: scale(1.1);
+  filter: brightness(0.86) saturate(1.18);
+}
+
+.revnoBlogCardImage span {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  max-width: calc(100% - 28px);
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blog-green), var(--blog-green-2));
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  z-index: 3;
+}
+
+.revnoBlogCardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px;
+  transition: all 0.35s ease;
+}
+
+.revnoBlogCardBody h3 {
+  min-height: 82px;
+  margin: 0 0 12px;
+  color: var(--blog-blue);
+  font-size: 19px;
+  line-height: 1.42;
+  font-weight: 900;
+  transition: all 0.35s ease;
+}
+
+.revnoBlogCardBody h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.revnoBlogCardBody p {
+  min-height: 78px;
+  margin: 0 0 20px;
+  color: var(--blog-muted);
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+
+.revnoBlogCard:hover .revnoBlogCardBody h3,
+.revnoBlogCard.blogClickActive .revnoBlogCardBody h3 {
+  color: #ffffff;
+}
+
+.revnoBlogCard:hover .revnoBlogCardBody p,
+.revnoBlogCard.blogClickActive .revnoBlogCardBody p {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.revnoBlogCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 47, 104, 0.08);
+  transition: all 0.35s ease;
+}
+
+.revnoBlogCard:hover .revnoBlogCardFooter,
+.revnoBlogCard.blogClickActive .revnoBlogCardFooter {
+  border-top-color: rgba(255, 255, 255, 0.22);
+}
+
+.revnoBlogAuthor {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.revnoBlogAuthor img {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.35s ease;
+}
+
+.revnoBlogCard:hover .revnoBlogAuthor img {
+  border: 2px solid rgba(114, 191, 22, 0.8);
+  box-shadow: 0 0 0 5px rgba(114, 191, 22, 0.12);
+}
+
+.revnoBlogAuthor strong {
+  display: block;
+  color: var(--blog-dark);
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.35s ease;
+}
+
+.revnoBlogAuthor small {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  color: var(--blog-muted);
+  font-size: 12px;
+  font-weight: 700;
+  transition: all 0.35s ease;
+}
+
+.revnoBlogAuthor small svg {
+  font-size: 10px;
+}
+
+.revnoBlogCard:hover .revnoBlogAuthor strong,
+.revnoBlogCard.blogClickActive .revnoBlogAuthor strong {
+  color: #ffffff;
+}
+
+.revnoBlogCard:hover .revnoBlogAuthor small,
+.revnoBlogCard.blogClickActive .revnoBlogAuthor small {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.revnoBlogReadMore {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 0 14px;
+  background: linear-gradient(135deg, var(--blog-blue), var(--blog-blue-2));
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: all 0.35s ease;
+}
+
+.revnoBlogCard:hover .revnoBlogReadMore,
+.revnoBlogCard.blogClickActive .revnoBlogReadMore {
+  background: linear-gradient(135deg, var(--blog-green), var(--blog-green-2));
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(114, 191, 22, 0.28);
+}
+
+.revnoBlogReadMore svg {
+  font-size: 11px;
+  transition: transform 0.3s ease;
+}
+
+.revnoBlogReadMore:hover svg {
+  transform: translateX(3px);
+}
+
+/* LOADING / ERROR / EMPTY */
+.blogAdminError {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  color: #b42318;
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.revnoBlogsLoading {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  color: var(--blog-blue);
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.revnoBlogsLoading svg {
+  color: var(--blog-green);
+  font-size: 34px;
+  animation: blogIconFloat 2.6s ease-in-out infinite;
+}
+
+.revnoBlogsEmpty {
+  grid-column: 1 / -1;
+  padding: 42px 24px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 47, 104, 0.08);
+  box-shadow: var(--blog-shadow);
+  text-align: center;
+}
+
+.revnoBlogsEmpty h3 {
+  margin: 0 0 8px;
+  color: var(--blog-blue);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.revnoBlogsEmpty p {
+  margin: 0;
+  color: var(--blog-muted);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* PAGINATION */
+.revnoBlogsPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 44px;
+}
+
+.revnoBlogsPagination button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 22px;
+  background: linear-gradient(135deg, var(--blog-blue), var(--blog-blue-2));
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 16px 34px rgba(0, 47, 104, 0.18);
+  transition: all 0.3s ease;
+}
+
+.revnoBlogsPagination button:not(:disabled):hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--blog-green), var(--blog-green-2));
+  box-shadow: 0 18px 40px rgba(114, 191, 22, 0.24);
+}
+
+.revnoBlogsPagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.revnoBlogsPagination span {
+  color: var(--blog-dark);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* REVEAL */
+.blogReveal {
+  opacity: 0;
+  transform: translateY(46px) scale(0.98);
+  filter: blur(7px);
+  transition:
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.85s ease;
+  transition-delay: var(--blog-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.blogFromLeft {
+  transform: translateX(-55px) rotateY(-8deg);
+}
+
+.blogFromRight {
+  transform: translateX(55px) rotateY(8deg);
+}
+
+.blogShow {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) rotateY(0) !important;
+  filter: blur(0) !important;
+}
+
+@keyframes blogImageShimmer {
+  0% {
+    transform: translateX(-130%);
+  }
+
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes blogIconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .revnoBlogsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .revnoBlogsContainer {
+    width: min(100% - 28px, 640px);
+  }
+
+  .revnoBlogsHero {
+    min-height: 320px;
+    padding: 58px 0 52px;
+  }
+
+  .revnoBlogsHero h1 {
+    font-size: 38px;
+  }
+
+  .revnoBlogsHero p {
+    font-size: 15px;
+  }
+
+  .revnoBlogsListSection {
+    padding: 66px 0;
+  }
+
+  .revnoBlogsSectionHead h2 {
+    font-size: 28px;
+  }
+
+  .revnoBlogsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .revnoBlogCardBody h3,
+  .revnoBlogCardBody p {
+    min-height: auto;
+  }
+
+  .revnoBlogCardFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .blogFromLeft,
+  .blogFromRight {
+    transform: translateY(42px) scale(0.98);
+  }
+}
+
+@media (max-width: 480px) {
+  .revnoBlogsContainer {
+    width: min(100% - 22px, 420px);
+  }
+
+  .revnoBlogsHero h1 {
+    font-size: 31px;
+  }
+
+  .revnoBlogsBreadcrumb {
+    font-size: 12px;
+    gap: 7px;
+  }
+
+  .revnoBlogCardImage {
+    height: 190px;
+  }
+
+  .revnoBlogCardBody {
+    padding: 22px 18px;
+  }
+
+  .revnoBlogsPagination {
+    gap: 12px;
+  }
+
+  .revnoBlogsPagination button {
+    width: 100%;
+  }
+}
