@@ -32,23 +32,18 @@ import serviceImg8 from "../assests/services/payment-posting.jpg";
 import serviceImg9 from "../assests/services/hippa.webp";
 import serviceImg10 from "../assests/services/reporting-analytics.webp";
 
-/* SERVICE ICONS */
-import rcmIcon from "../assests/icons/rcm.png";
-import billingIcon from "../assests/icons/billing.png";
-import codingIcon from "../assests/icons/coding.png";
-import insuranceIcon from "../assests/icons/insurance.png";
-import denialIcon from "../assests/icons/denial.png";
-import credentialingIcon from "../assests/icons/credentialing.png";
-import collectionsIcon from "../assests/icons/collections.png";
-import hipaaIcon from "../assests/icons/hipaa.png";
-import reportingIcon from "../assests/icons/Reporting.png";
-import chargesIcon from "../assests/icons/Charges.png";
+import centerGirl from "../assests/home/women.png";
+import centerMen from "../assests/home/men.png";
+import bubbleImg1 from "../assests/home/1.png";
+import bubbleImg2 from "../assests/home/2.png";
+import bubbleImg3 from "../assests/home/3.png";
+import bubbleImg4 from "../assests/home/4.png";
 
 /* HOME PAGE IMAGES */
 import aboutMain from "../assests/home/about-main.jpg";
 import technologyImg from "../assests/home/technology.jpg";
 import innovationImg from "../assests/home/innovation.webp";
-import integrationImg from "../assests/home/integration.jpg";
+import integrationImg from "../assests/home/Specialties.png";
 import certificationImg from "../assests/home/certifications.png";
 import auditImage from "../assests/home/free-consultation.avif";
 
@@ -114,7 +109,7 @@ export default function Home() {
 
 
   useEffect(() => {
-  const revealItems = document.querySelectorAll(`
+    const revealItems = document.querySelectorAll(`
     .rcm-text-block,
     .about-rcm-single-visual,
     .unify-expect-card,
@@ -305,76 +300,68 @@ export default function Home() {
   };
   const servicesData = [
     {
-      img: rcmIcon,
+
       cover: serviceImg1,
       title: "Revenue Cycle Management (RCM)",
       desc: "End-to-end revenue cycle support that helps practices reduce denials, improve cash flow, and simplify billing operations.",
       page: "/rcm-services",
     },
     {
-      img: billingIcon,
       cover: serviceImg2,
       title: "Medical Billing",
       desc: "Accurate claim submission, payment tracking, billing follow-up, and transparent reporting for faster reimbursements.",
       page: "/medical-billing",
     },
     {
-      img: codingIcon,
       cover: serviceImg3,
       title: "Medical Coding",
       desc: "Certified coding support for ICD-10, CPT, and HCPCS accuracy with cleaner claims and stronger compliance.",
       page: "/medical-coding",
     },
     {
-      img: insuranceIcon,
       cover: serviceImg4,
       title: "Eligibility & Benefits Verification",
       desc: "Verify coverage, copays, deductibles, payer rules, and authorizations before patient visits.",
       page: "/eligibility-and-benifits",
     },
     {
-      img: denialIcon,
       cover: serviceImg5,
       title: "Denial Management",
       desc: "Identify denial trends, manage appeals, recover aging claims, and strengthen collections.",
       page: "/denial-management",
     },
     {
-      img: credentialingIcon,
       cover: serviceImg6,
       title: "Provider Credentialing",
       desc: "Simplify payer enrollment, reduce paperwork, and help providers start billing sooner.",
       page: "/credentialing",
     },
     {
-      img: chargesIcon,
       cover: serviceImg7,
       title: "Charges Entry",
       desc: "Accurate charge capture that reduces claim errors and supports clean claim submission.",
       page: "/charges-entry",
     },
     {
-      img: collectionsIcon,
       cover: serviceImg8,
       title: "Payment Posting",
       desc: "Post ERA, EOB, insurance, and patient payments with clean reconciliation and AR visibility.",
       page: "/payment-posting",
     },
     {
-      img: hipaaIcon,
       cover: serviceImg9,
       title: "HIPAA Compliance",
       desc: "Secure billing workflows and compliant handling of patient and practice data.",
       page: "/hipaa-compliance",
     },
     {
-      img: reportingIcon,
       cover: serviceImg10,
       title: "Reporting & Analytics",
       desc: "Actionable revenue reports that help you track performance, gaps, trends, and financial health.",
       page: "/reporting",
     },
   ];
+  const featuredServices = servicesData.slice(0, 4);
   const expectStats = [
     {
       icon: <FaClock />,
@@ -453,21 +440,21 @@ export default function Home() {
       metric: "28% → 9%",
       specialty: "Internal Medicine",
       title: "High Denial Rate Reduction",
-      desc: "Reduced preventable denials through stronger eligibility checks, coding audits, authorization tracking, and daily AR follow-up.",
+      desc: "Fewer avoidable denials with enhanced eligibility checks, coding audits, authorization advancements and daily AR follow-ups.",
     },
     {
       icon: <FaCoins />,
       metric: "$420K",
       specialty: "Orthopedics",
       title: "Revenue Leakage Recovery",
-      desc: "Recovered missed revenue opportunities by improving charge capture, documentation review, and same-day charge entry.",
+      desc: "Achieved increased charge capture, documentation review, and same-day entry of the charge to recover missed revenue opportunities.",
     },
     {
       icon: <FaFolderOpen />,
       metric: "$1.3M",
       specialty: "Cardiology",
       title: "AR Recovery Project",
-      desc: "Recovered aging AR by organizing high-value claims, appeals, payer follow-ups, and corrected claim resubmissions.",
+      desc: "AR Rework spoil the high value claims appeals, payer follow-ups and corrected claim resubmissions.",
     },
   ];
   const testimonials = [
@@ -510,14 +497,6 @@ export default function Home() {
 
     return () => clearInterval(timer);
   }, [servicesData.length]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, [testimonials.length]);
 
   const activeServices = useMemo(() => {
     return Array.from({ length: serviceCardsPerView }, (_, index) => {
@@ -685,7 +664,7 @@ export default function Home() {
         <section className="hero-info-strip">
           <div className="hero-info-card blue-dark">
             <h3>Online Appointment</h3>
-            <p>Follow the simple steps below and get your appointment fixed online.</p>
+            <p>Simple steps that you need to follow and get your appointment fixed online.</p>
             <button type="button" onClick={() => goToPage("/contact-us")}>
               Make an appointment
             </button>
@@ -693,13 +672,13 @@ export default function Home() {
 
           <div className="hero-info-card sky-blue">
             <h3>24/7 Operation Reliability</h3>
-            <p>Our quick turnaround and 24/7 support provide great operational reliability.</p>
-            <strong>+1 (866) 796-0858</strong>
+            <p>With a rapid turnaround and 24/7 assistance, the operational dependability is outstanding.</p>
+            <strong>+0 (000) 000-0000</strong>
           </div>
 
           <div className="hero-info-card green">
             <h3>Qualified Professionals</h3>
-            <p>Our expertise and specialty-specific experience improve your facility’s financial health.</p>
+            <p>Facility based knowledge and specialty-related experience enhances the financial well-being of your facility.</p>
             <button type="button" onClick={() => goToPage("/contact-us")}>
               Get in touch
             </button>
@@ -717,15 +696,13 @@ export default function Home() {
               <div className="title-line" />
 
               <p>
-                Revno RCM partners with healthcare providers to simplify billing, improve claim
-                accuracy, reduce denials, and create a smoother revenue cycle from patient
-                registration to final reimbursement.
+                Revno RCM collaborates with health systems to enhance the ability to leverage technology and streamline billing, decrease claim inaccuracies, minimize denials in addition to delivering a seamless revenue cycle operation from patient registration through final reimbursement.
+
               </p>
 
               <p>
-                Our team manages medical billing, coding, eligibility verification, payment posting,
-                denial follow-up, reporting, and compliance-focused revenue cycle support so your
-                practice can stay focused on patient care.
+                Our experienced team handles medical billing, coding, eligibility verification, payment posting and denial follow-up to provide compliance-driven revenue cycle support so you can focus on patient care.
+
               </p>
 
               <button type="button" onClick={() => goToPage("/about-us")}>
@@ -733,8 +710,12 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="about-rcm-single-visual">
-              <img src={aboutMain} alt="Revno RCM healthcare professional" />
+            <div className="specialties-visual-wrap">
+              <img
+                src={centerGirl}
+                alt="Medical specialties we serve"
+                className="specialties-doctor-img"
+              />
             </div>
           </div>
         </section>
@@ -742,7 +723,14 @@ export default function Home() {
         {/* EXPECT STATS */}
         <section className="unify-expect-section">
           <div className="unify-container">
-            <h2 className="expect-title">Revno RCM Customers Can Expect</h2>
+            <div className="case-study-head">
+              <span>Trust</span>
+              <h2>Why 2,000+ Providers Trust Us</h2>
+              <p>
+                At Revno RCM, we help healthcare providers boost collections, reduce denials, and improve cash flow with smarter Revenue Cycle Management—so they can focus on quality patient care.
+
+              </p>
+            </div>
 
             <div className="unify-expect-grid">
               {expectStats.map((item, index) => (
@@ -773,9 +761,8 @@ export default function Home() {
               <div className="title-line" />
 
               <p>
-                Revno RCM supports healthcare providers across multiple specialties with dedicated
-                billing and coding workflows that match specialty-specific payer rules,
-                documentation standards, and compliance requirements.
+                RevnoRCM uses dedicated billing and coding workflows for specific specialties, based on plans from payers that serve providers within each specialty and the documentation rules associated with each specialty as well as compliance requirements.
+
               </p>
 
               <div className="specialty-tags">
@@ -788,107 +775,103 @@ export default function Home() {
                 Talk to Our Billing Team
               </button>
             </div>
+            <div className="specialties-visual-wrap">
+              <img
+                src={centerMen}
+                alt="Medical specialties we serve"
+                className="specialties-doctor-img"
+              />
 
-            <div className="about-rcm-single-visual">
-              <img src={integrationImg} alt="Medical specialties we serve" />
+              <div className="specialty-bubble bubble-one">
+                <img src={bubbleImg1} alt="Patient support" />
+              </div>
+
+              <div className="specialty-bubble bubble-two">
+                <img src={bubbleImg2} alt="Billing analytics" />
+              </div>
+
+              <div className="specialty-bubble bubble-three">
+                <img src={bubbleImg3} alt="Healthcare support" />
+              </div>
+
+              <div className="specialty-bubble bubble-four">
+                <img src={bubbleImg4} alt="Compliance badge" />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* AUTO SERVICES */}
-        <section className="revno-premium-services">
-          <div className="unify-container">
-            <div className="revno-service-head">
-              <span>Our Services</span>
+        {/* SERVICES */}
+        <section className="revno-feature-services">
+          <div className="unify-container revno-feature-services-layout">
+            <div className="revno-feature-services-content rcm-text-block">
+              <span className="section-kicker">Our Services</span>
 
               <h2>Full Suite of Everything Your Revenue Cycle Needs</h2>
 
+              <div className="title-line" />
+
               <p>
-                Complete healthcare revenue cycle services managed by certified billing, coding,
-                denial, and compliance specialists.
+                Complete healthcare revenue cycle services — each managed by certified specialists.
               </p>
-            </div>
 
-            <div className="carousel-shell">
-              <button
-                type="button"
-                className="carousel-arrow carousel-arrow-left"
-                onClick={goPrevService}
-                aria-label="Previous service"
-              >
-                ‹
-              </button>
+              <p>
+                Explore our core services designed to reduce claim errors, improve
+                reimbursements, and keep your practice financially healthy.
+              </p>
 
-              <div className="revno-auto-grid service-auto-grid">
-                {activeServices.map((service, index) => (
-                  <article
-                    className="revno-image-service-card"
-                    key={`service-slot-${index}`}
-                    onClick={() => goToPage(service.page)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") goToPage(service.page);
-                    }}
-                  >
-                    <div className="revno-service-cover">
-                      <img src={service.cover} alt={service.title} />
-
-                      <span className="service-card-number">
-                        {String((serviceIndex + index) % servicesData.length + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-
-                    <div className="revno-service-content">
-                      <div className="revno-service-icon-small">
-                        <img src={service.img} alt={`${service.title} icon`} />
-                      </div>
-
-                      <h3>{service.title}</h3>
-                      <p>{service.desc}</p>
-
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          goToPage(service.page);
-                        }}
-                      >
-                        View More »
-                      </button>
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-              <button
-                type="button"
-                className="carousel-arrow carousel-arrow-right"
-                onClick={goNextService}
-                aria-label="Next service"
-              >
-                ›
+              <button type="button" onClick={() => goToPage("/services")}>
+                View All Services <FaArrowRight />
               </button>
             </div>
 
-            <div className="carousel-dots">
-              {serviceDots.map((dot) => (
-                <button
-                  key={`service-dot-${dot}`}
-                  type="button"
-                  className={`carousel-dot ${serviceIndex === dot ? "active" : ""}`}
-                  onClick={() => setServiceIndex(dot)}
-                  aria-label={`Go to service ${dot + 1}`}
-                />
+            <div className="revno-feature-services-grid">
+              {featuredServices.map((service, index) => (
+                <article
+                  className="revno-feature-service-card"
+                  key={service.title}
+                  onClick={() => goToPage(service.page)}
+                  role="button"
+                  tabIndex={0}
+                  style={{ "--service-delay": `${index * 120}ms` }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") goToPage(service.page);
+                  }}
+                >
+                  <img src={service.cover} alt={service.title} />
+
+                  <div className="feature-service-shade" />
+
+                  <div className="feature-service-bottom">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{service.title}</h3>
+                  </div>
+
+                  <div className="feature-service-hover">
+
+                    <h3>{service.title}</h3>
+                    <p>{service.desc}</p>
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        goToPage(service.page);
+                      }}
+                    >
+                      Explore Service <FaArrowRight />
+                    </button>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
-
         {/* CERTIFICATIONS */}
         <section className="unify-section revno-cert-section">
           <div className="unify-container revno-cert-grid">
-            <div className="about-rcm-single-visual">
+            {/* Desktop image */}
+            <div className="about-rcm-single-visual cert-desktop-image">
               <img src={certificationImg} alt="Revno RCM certifications" />
             </div>
 
@@ -898,10 +881,13 @@ export default function Home() {
               <h2>Our Certifications</h2>
 
               <p>
-                Revno RCM follows secure, compliant, and quality-focused billing processes. Our
-                standards support accurate healthcare billing, safe data handling, and reliable
-                revenue cycle operations.
+                Clean & compliant billing processes with secure and quality Focused Revno RCM Our standards enable accurate billing, and safe use of data while also ensuring quality revenue cycle operations.
               </p>
+
+              {/* Mobile image yaha show hogi */}
+              <div className="cert-mobile-image">
+                <img src={certificationImg} alt="Revno RCM certifications" />
+              </div>
 
               <div className="cert-logo-grid">
                 {certificationBadges.map((cert) => (
@@ -921,8 +907,7 @@ export default function Home() {
               <span>Case Studies</span>
               <h2>RCM Case Studies That Show Real Results</h2>
               <p>
-                A quick look at how Revno RCM helps healthcare practices reduce denials,
-                recover revenue, improve AR, and strengthen collections.
+                Overview of Revno RCM and its role in making healthcare practices reduce denials and recover revenue, improve AR (Accounts Receivable) and enhance collections.
               </p>
             </div>
 
@@ -1035,8 +1020,7 @@ export default function Home() {
               <span>Latest Articles</span>
               <h2>Medical Billing & RCM Insights</h2>
               <p>
-                Expert updates, billing tips, denial prevention strategies, and revenue cycle
-                insights for healthcare providers.
+                Expert updates, billing tips, denial prevention strategies and revenue cycle insights for healthcare providers.
               </p>
             </div>
 
@@ -1146,8 +1130,8 @@ export default function Home() {
                 <h2>Request Free RCM Audit</h2>
 
                 <p>
-                  Share your practice details and our billing team will connect with you to
-                  understand your revenue cycle challenges.
+                  Send us your practice details and our billing team will reach out to understand your revenue cycle problems.
+
                 </p>
               </div>
 
