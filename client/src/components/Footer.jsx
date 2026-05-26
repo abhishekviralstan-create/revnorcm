@@ -125,6 +125,9 @@ export default function Footer() {
                 <br />
                 SAS Nagar, Punjab, 160055
               </p>
+               <a href="tel:+917087077059" className="footer-phone">
+               +91-7087077059
+              </a>
             </div>
 
 

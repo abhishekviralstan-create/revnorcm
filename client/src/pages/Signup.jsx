@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../api";
+import "../css/signup.css";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -85,92 +86,157 @@ const Signup = () => {
   };
 
   return (
-    <div className="auth-page">
-      <form className="auth-card auth-card-wide" onSubmit={handleSignup}>
-        <h1>Create Account</h1>
-        <p>Start publishing professional blogs.</p>
+    <section className="signup-page">
+      <div className="signup-grid-bg"></div>
+      <div className="signup-glow signup-glow-one"></div>
+      <div className="signup-glow signup-glow-two"></div>
 
-        {error && <div className="error-box">{error}</div>}
+      <div className="signup-wrapper">
+        <div className="signup-info">
+          <span className="signup-badge">Author Registration</span>
 
-        <label>Profile Image</label>
-        <input type="file" accept="image/*" onChange={handleImage} />
+          <h1>Create your author account</h1>
 
-        {preview && (
-          <img src={preview} alt="Profile preview" className="profile-preview" />
-        )}
+          <p>
+            Join the blog dashboard to publish professional articles, manage
+            your author profile and submit content for approval.
+          </p>
 
-        <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Enter your name"
-          value={form.name}
-          onChange={handleChange}
-          required
-        />
+          <div className="signup-info-cards">
+            <div>
+              <strong>Profile Approval</strong>
+              <span>Your account will be reviewed before dashboard access.</span>
+            </div>
 
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
+            <div>
+              <strong>Professional Blogs</strong>
+              <span>Create and manage high-quality blog content easily.</span>
+            </div>
 
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
-
-        <label>Date of Birth</label>
-        <input
-          type="date"
-          name="dob"
-          value={form.dob}
-          onChange={handleChange}
-        />
-
-        <label>Role</label>
-        <input
-          type="text"
-          name="authorRole"
-          placeholder="Medical Billing Specialist"
-          value={form.authorRole}
-          onChange={handleChange}
-        />
-
-        <label>Experience</label>
-        <textarea
-          name="experience"
-          placeholder="Write author experience, expertise, background..."
-          value={form.experience}
-          onChange={handleChange}
-          rows="4"
-        />
-
-        <button type="submit" disabled={loading}>
-          {loading ? "Creating..." : "Signup"}
-        </button>
-
-        <div className="auth-links">
-          <span>
-            Already have an account? <Link to="/login">Login</Link>
-          </span>
-
-          <span>
-            Forgot password?{" "}
-            <Link to="/admin/reset-password">Reset Password</Link>
-          </span>
+            <div>
+              <strong>Secure Dashboard</strong>
+              <span>Your author profile and content stay protected.</span>
+            </div>
+          </div>
         </div>
-      </form>
-    </div>
+
+        <form className="signup-card" onSubmit={handleSignup}>
+          <div className="signup-card-header">
+            <h2>Create Account</h2>
+            <p>Start publishing professional blogs.</p>
+          </div>
+
+          {error && <div className="signup-error">{error}</div>}
+
+          <div className="signup-upload-block">
+            <div className="signup-upload-preview">
+              {preview ? (
+                <img src={preview} alt="Profile preview" />
+              ) : (
+                <span>+</span>
+              )}
+            </div>
+
+            <div className="signup-upload-content">
+              <label htmlFor="profileImage">Profile Image</label>
+              <p>Upload JPG, PNG or WEBP image under 1 MB.</p>
+
+              <input
+                id="profileImage"
+                type="file"
+                accept="image/*"
+                onChange={handleImage}
+              />
+            </div>
+          </div>
+
+          <div className="signup-form-grid">
+            <div className="signup-field">
+              <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                value={form.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="signup-field">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="signup-field">
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="signup-field">
+              <label>Date of Birth</label>
+              <input
+                type="date"
+                name="dob"
+                value={form.dob}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="signup-field signup-full">
+              <label>Role</label>
+              <input
+                type="text"
+                name="authorRole"
+                placeholder="Medical Billing Specialist"
+                value={form.authorRole}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="signup-field signup-full">
+              <label>Experience</label>
+              <textarea
+                name="experience"
+                placeholder="Write author experience, expertise, background..."
+                value={form.experience}
+                onChange={handleChange}
+                rows="4"
+              />
+            </div>
+          </div>
+
+          <button className="signup-btn" type="submit" disabled={loading}>
+            {loading ? "Creating..." : "Create Account"}
+          </button>
+
+          <div className="signup-links">
+            <p>
+              Already have an account? <Link to="/login">Login</Link>
+            </p>
+
+            <p>
+              Forgot password?{" "}
+              <Link to="/admin/reset-password">Reset Password</Link>
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 };
 

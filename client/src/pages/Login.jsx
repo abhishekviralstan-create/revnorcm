@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../api";
+import "../css/login.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Login = () => {
       if (res.data.user.access) {
         navigate("/dashboard");
       } else {
-        navigate("/access-pending");  
+        navigate("/access-pending");
       }
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
@@ -44,48 +45,63 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-page">
-      <form className="auth-card" onSubmit={handleLogin}>
-        <h1>Welcome Back</h1>
-        <p>Login to manage your blogs.</p>
+    <section className="login-page">
+      <div className="login-bg-grid"></div>
+      <div className="login-glow login-glow-one"></div>
+      <div className="login-glow login-glow-two"></div>
 
-        {error && <div className="error-box">{error}</div>}
+      <div className="login-card">
 
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
+        <div className="login-header">
+          <span>Author Dashboard</span>
+          <h1>Welcome Back</h1>
+          <p>Login to manage your blogs and content dashboard.</p>
+        </div>
 
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
+        {error && <div className="login-error">{error}</div>}
 
-        <button type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
-        </button>
+        <form onSubmit={handleLogin} className="login-form">
+          <div className="login-field">
+            <label>Email Address</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-       <div className="auth-links">
-  <span>
-    New author? <Link to="/signup">Create account</Link>
-  </span>
+          <div className="login-field">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-  <span>
-    Forgot password? <Link to="/admin/reset-password">Reset Password</Link>
-  </span>
-</div>
-      </form>
-    </div>
+          <button type="submit" disabled={loading} className="login-btn">
+            {loading ? "Logging in..." : "Login"}
+          </button>
+        </form>
+
+        <div className="login-links">
+          <p>
+            New author? <Link to="/signup">Create account</Link>
+          </p>
+
+          <p>
+            Forgot password?{" "}
+            <Link to="/admin/reset-password">Reset Password</Link>
+          </p>
+        </div>
+      </div>
+    </section>
   );
 };
 

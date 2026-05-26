@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import "../css/WhatsAppButton.css";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "919120010883"; // yahan apna WhatsApp number add karo, country code ke saath
+  const phoneNumber = "917087077059"; // yahan apna WhatsApp number add karo, country code ke saath
   const message =
     "Hello Revno RCM, I would like to discuss medical billing and RCM services.";
 
