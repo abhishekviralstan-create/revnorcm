@@ -145,7 +145,7 @@ function AppContent() {
       </main>
 
       {!shouldHideLayout && <Footer />}
-      {!shouldHideLayout && <WhatsAppButton />}
+      {/* {!shouldHideLayout && <WhatsAppButton />} */}
     </>
   );
 }

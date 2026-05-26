@@ -15,7 +15,7 @@ import {
 /* ORIGINAL IMAGES */
 import credentialingImg from "../assests/services/Credentialing.webp";
 import rcmImg from "../assests/services/RCM.png";
-import reportingImg from "../assests/services/reporting-analytics.webp";
+import reportingImg from "../assests/home/delay.jpg";
 
 export default function Credentialing({ onNavigate }) {
   const navigate = useNavigate();
@@ -47,27 +47,52 @@ export default function Credentialing({ onNavigate }) {
   }, []);
 
   const payers = [
-    "Medicare",
-    "Medicaid",
-    "Aetna",
-    "Cigna",
-    "UnitedHealthcare",
-    "BCBS",
-    "Humana",
-    "Molina",
-    "WellCare",
-    "Tricare",
+    {
+      name: "Medicare",
+      logo: "/payers/medicare.png",
+    },
+    {
+      name: "Medicaid",
+      logo: "/payers/medicaid.png",
+    },
+    {
+      name: "Aetna",
+      logo: "/payers/aetna.png",
+    },
+    {
+      name: "Cigna",
+      logo: "/payers/cigna.png",
+    },
+    {
+      name: "UnitedHealthcare",
+      logo: "/payers/united-healthcare.png",
+    },
+    {
+      name: "BCBS",
+      logo: "/payers/bcbs.png",
+    },
+    {
+      name: "Humana",
+      logo: "/payers/humana.png",
+    },
+    {
+      name: "Molina",
+      logo: "/payers/molina.png",
+    },
+    {
+      name: "WellCare",
+      logo: "/payers/wellcare.png",
+    },
+    {
+      name: "Tricare",
+      logo: "/payers/tricare.png",
+    },
   ];
 
   const checks = [
     "CAQH profile creation and ongoing maintenance",
     "Initial payer enrollment for commercial and government insurers",
     "Medicare and Medicaid enrollment with CMS-855 applications",
-    "Re-credentialing and re-enrollment management",
-    "Group NPI enrollment and taxonomy code management",
-    "State license verification and expiration tracking",
-    "Credentialing status tracking and payer follow-up",
-    "Hospital privileging support",
   ];
 
   const processSteps = [
@@ -340,9 +365,13 @@ export default function Credentialing({ onNavigate }) {
 
             <div className="cred-payer-grid">
               {payers.map((payer, index) => (
-                <article className="cred-payer-card cred-reveal" key={payer}>
+                <article className="cred-payer-card cred-reveal" key={payer.name}>
+                  <div className="cred-payer-logo">
+                    <img src={payer.logo} alt={`${payer.name} logo`} />
+                  </div>
+
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  <p>{payer}</p>
+                  <p>{payer.name}</p>
                 </article>
               ))}
             </div>

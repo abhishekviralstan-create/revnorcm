@@ -107,12 +107,15 @@ export default function Footer() {
             <div className="footer-address-box">
               <h5>Operations Office - US</h5>
               <p>
-               30 N Gould St Ste R Sheridan,
+                30 N Gould St Ste R Sheridan,
                 <br />
-               WY 82801
+                WY 82801
               </p>
+              <a href="tel:+1 (307) 266-7879" className="footer-phone">
+                +1 (307) 266-7879
+              </a>
             </div>
-
+            <br />
             <div className="footer-address-box">
               <h5>Corporate Office - Mohali, India</h5>
               <p>
@@ -120,13 +123,11 @@ export default function Footer() {
                 <br />
                 Industrial Area, Sector 74,
                 <br />
-               SAS Nagar, Punjab, 160055
+                SAS Nagar, Punjab, 160055
               </p>
             </div>
 
-            <a href="tel:+91-9120010883" className="footer-phone">
-             +91-9120010883
-            </a>
+
 
             <a href="mailto:info@revnorcm.com" className="footer-mail">
               info@revnorcm.com
@@ -136,9 +137,7 @@ export default function Footer() {
                 <FaYoutube />
               </a>
 
-              <a href="https://t.me/revnorcm" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                <FaTelegramPlane />
-              </a>
+
 
               <a href="https://www.facebook.com/revnorcm/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <FaFacebookF />
@@ -161,7 +160,7 @@ export default function Footer() {
 
         <div className="footer-bot">
           <span>
-            © 2024-2026 RevnoRCM. All rights reserved. |{" "}
+            © 2026 RevnoRCM. All rights reserved. |{" "}
             <a href="https://www.revnorcm.com/">revnorcm.com</a>
           </span>
 

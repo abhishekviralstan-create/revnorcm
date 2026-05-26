@@ -1679,3 +1679,188 @@ button {
     max-height: 330px !important;
   }
 }
+/* ================================
+   SPECIALTY LOGOS
+================================ */
+
+.about-specialty-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(90px, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+  align-items: stretch;
+}
+
+.about-specialty-logo-card {
+  position: relative;
+  min-height: 112px;
+  padding: 14px 10px 12px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 47, 104, 0.08);
+  box-shadow: 0 16px 38px rgba(0, 47, 104, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.about-specialty-logo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background:
+    radial-gradient(circle at top right, rgba(114, 191, 22, 0.18), transparent 38%),
+    linear-gradient(135deg, rgba(0, 47, 104, 0.04), rgba(0, 166, 231, 0.08));
+  transition: opacity 0.35s ease;
+}
+
+.about-specialty-logo-card:hover::before {
+  opacity: 1;
+}
+
+.about-specialty-logo-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(114, 191, 22, 0.35);
+  box-shadow: 0 24px 58px rgba(0, 47, 104, 0.16);
+}
+
+.about-specialty-logo-card img {
+  position: relative;
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+}
+
+.about-specialty-logo-card span {
+  position: relative;
+  z-index: 2;
+  color: var(--revno-blue);
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* ================================
+   EHR LOGOS
+================================ */
+
+.ehr-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(130px, 1fr));
+  gap: 16px;
+  align-items: center;
+}
+
+.ehr-logo-card {
+  min-height: 86px;
+  padding: 18px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(0, 166, 231, 0.08), rgba(114, 191, 22, 0.1));
+  border: 1px solid rgba(0, 47, 104, 0.08);
+  box-shadow: 0 14px 36px rgba(0, 47, 104, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+.ehr-logo-card:hover {
+  transform: translateY(-7px);
+  background: #ffffff;
+  border-color: rgba(114, 191, 22, 0.35);
+  box-shadow: 0 24px 58px rgba(0, 47, 104, 0.15);
+}
+
+.ehr-logo-card img {
+  width: 100%;
+  max-width: 145px;
+  max-height: 46px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive logo grids */
+@media (max-width: 1100px) {
+  .about-specialty-logo-grid {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+
+  .ehr-logo-grid {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .about-specialty-logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .about-specialty-logo-card {
+    min-height: 104px;
+    border-radius: 20px;
+  }
+
+  .about-specialty-logo-card img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .about-specialty-logo-card span {
+    font-size: 11.5px;
+  }
+
+  .ehr-logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .ehr-logo-card {
+    min-height: 78px;
+    border-radius: 20px;
+  }
+
+  .ehr-logo-card img {
+    max-width: 125px;
+    max-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-specialty-logo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .about-specialty-logo-card {
+    min-height: 98px;
+    padding: 12px 8px;
+  }
+
+  .about-specialty-logo-card img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .ehr-logo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ehr-logo-card {
+    min-height: 72px;
+    padding: 14px;
+  }
+
+  .ehr-logo-card img {
+    max-width: 110px;
+    max-height: 36px;
+  }
+}

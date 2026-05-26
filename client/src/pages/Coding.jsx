@@ -14,8 +14,8 @@ import {
 
 /* ORIGINAL IMAGES */
 import codingImg from "../assests/home/matters.png";
-import billingImg from "../assests/home/key.png";
-import reportingImg from "../assests/home/why-choose.png";
+import billingImg from "../assests/home/bene.png";
+import reportingImg from "../assests/home/men.png";
 
 export default function Coding({ onNavigate }) {
   const navigate = useNavigate();

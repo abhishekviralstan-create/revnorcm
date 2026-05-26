@@ -15,7 +15,7 @@ import {
 
 /* ORIGINAL IMAGES */
 import reportingImg from "../assests/services/reporting-analytics.webp";
-import rcmImg from "../assests/services/RCM.png";
+import rcmImg from "../assests/home/reposting.jpg";
 import billingImg from "../assests/services/medical-billing.png";
 
 export default function Reporting({ onNavigate }) {
@@ -69,8 +69,6 @@ export default function Reporting({ onNavigate }) {
     "Full financial transparency across payers, providers, and sites",
     "Proactive identification of denial patterns before they become major revenue issues",
     "Benchmark KPI dashboards to identify performance gaps",
-    "Data-backed support for payer contract negotiations",
-    "Executive-ready reports that clearly show financial health",
   ];
 
   const processSteps = [
@@ -367,7 +365,7 @@ export default function Reporting({ onNavigate }) {
           <div className="reporting-container reporting-split">
             <div className="reporting-content reporting-reveal reporting-left">
               <span className="reporting-kicker">Key Benefits</span>
-              <h2>No More Guessing at How Your Practice Is Performing</h2>
+              <h2>No More Guessing</h2>
               <div className="reporting-title-line" />
 
               <div className="reporting-benefit-list">

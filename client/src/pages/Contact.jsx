@@ -13,6 +13,13 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaArrowRight,
+  // support strip icons
+  FaFileInvoiceDollar,
+  FaBan,
+  FaIdBadge,
+  FaStethoscope,
+  FaCreditCard,
+  FaLock,
 } from "react-icons/fa";
 import "../css/contact.css";
 
@@ -23,7 +30,7 @@ export default function Contact() {
     "https://script.google.com/macros/s/AKfycbwG2wY3LRGXNoytvHELIcL2SvntHXeBMufHJjg2DGhiJusNLVMIcwQoCox6pQkuS5KA4g/exec";
 
   const contactDetails = {
-    phone: "+91-9120010883",
+    phone: " +1 (307) 266-7879",
     email: "info@revnorcm.com",
     usOffice: {
       title: "Operations Office - US",
@@ -88,12 +95,30 @@ export default function Contact() {
   ];
 
   const supportCards = [
-    "Medical Billing",
-    "Denial Management",
-    "Credentialing",
-    "Medical Coding",
-    "Payment Posting",
-    "HIPAA-Compliant RCM",
+    {
+      title: "Medical Billing",
+      icon: <FaFileInvoiceDollar />,
+    },
+    {
+      title: "Denial Management",
+      icon: <FaBan />,
+    },
+    {
+      title: "Credentialing",
+      icon: <FaIdBadge />,
+    },
+    {
+      title: "Medical Coding",
+      icon: <FaStethoscope />,
+    },
+    {
+      title: "Payment Posting",
+      icon: <FaCreditCard />,
+    },
+    {
+      title: "HIPAA-Compliant RCM",
+      icon: <FaLock />,
+    },
   ];
 
   const [form, setForm] = useState({
@@ -375,9 +400,9 @@ export default function Contact() {
         <div className="contact-container">
           <div className="contact-support-grid">
             {supportCards.map((item) => (
-              <div className="contact-support-card contact-reveal" key={item}>
-                <span>✓</span>
-                <p>{item}</p>
+              <div className="contact-support-card contact-reveal" key={item.title}>
+                <div className="contact-support-icon">{item.icon}</div>
+                <p>{item.title}</p>
               </div>
             ))}
           </div>
@@ -416,7 +441,7 @@ export default function Contact() {
                     name="firstName"
                     value={form.firstName}
                     onChange={handle}
-                    placeholder="Dr. Amanda"
+                    placeholder="Dr. Ricky"
                   />
                   {errors.firstName && (
                     <small className="form-error">{errors.firstName}</small>
@@ -443,7 +468,7 @@ export default function Contact() {
                 name="practiceEmail"
                 value={form.practiceEmail}
                 onChange={handle}
-                placeholder="billing@yourpractice.com"
+                placeholder="info@revnorcm.com"
               />
               {errors.practiceEmail && (
                 <small className="form-error">{errors.practiceEmail}</small>
@@ -454,7 +479,7 @@ export default function Contact() {
                 name="phone"
                 value={form.phone}
                 onChange={handle}
-                placeholder="+1 (555) 000-0000"
+                placeholder=" +1 (307) 266-7879"
               />
               {errors.phone && (
                 <small className="form-error">{errors.phone}</small>

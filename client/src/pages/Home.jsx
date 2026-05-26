@@ -460,7 +460,7 @@ export default function Home() {
   ];
   const testimonials = [
     {
-      name: "Dr. Amanda Collins",
+      name: "Dr. Ricky Collins",
       role: "Family Practice Owner",
       initial: "A",
       text: "Revno RCM helped us understand our billing gaps and reduced avoidable claim delays within the first few weeks.",
@@ -674,7 +674,7 @@ export default function Home() {
           <div className="hero-info-card sky-blue" style={{ "--case-delay": "120ms" }}>
             <h3>24/7 Operation Reliability</h3>
             <p>With a rapid turnaround and 24/7 assistance, the operational dependability is outstanding.</p>
-            <strong>+0 (000) 000-0000</strong>
+            <strong> +1 (307) 266-7879</strong>
           </div>
 
           <div className="hero-info-card green" style={{ "--case-delay": "240ms" }}>
@@ -1140,7 +1140,7 @@ export default function Home() {
                 <div className="form-row">
                   <div>
                     <label>First Name</label>
-                    <input name="firstName" placeholder="Dr. Amanda" required />
+                    <input name="firstName" placeholder="Dr. Ricky" required />
                   </div>
 
                   <div>
@@ -1153,12 +1153,12 @@ export default function Home() {
                 <input
                   type="email"
                   name="practiceEmail"
-                  placeholder="billing@yourpractice.com"
+                  placeholder="info@revnorcm.com"
                   required
                 />
 
                 <label>Phone Number</label>
-                <input name="phone" placeholder="+1 (555) 000-0000" required />
+                <input name="phone" placeholder=" +1 (307) 266-7879" required />
 
                 <div className="form-row">
                   <div>
@@ -1238,7 +1238,7 @@ export default function Home() {
                 <div className="form-row">
                   <div>
                     <label>First Name</label>
-                    <input name="firstName" placeholder="Dr. Amanda" required />
+                    <input name="firstName" placeholder="Dr. Ricky" required />
                   </div>
 
                   <div>
@@ -1251,12 +1251,12 @@ export default function Home() {
                 <input
                   type="email"
                   name="practiceEmail"
-                  placeholder="billing@yourpractice.com"
+                  placeholder="info@revnorcm.com"
                   required
                 />
 
                 <label>Phone Number</label>
-                <input name="phone" placeholder="+1 (555) 000-0000" required />
+                <input name="phone" placeholder=" +1 (307) 266-7879" required />
 
                 <div className="form-row">
                   <div>

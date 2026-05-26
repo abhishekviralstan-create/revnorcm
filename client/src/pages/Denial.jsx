@@ -14,8 +14,8 @@ import {
 
 /* ORIGINAL IMAGES */
 import denialImg from "../assests/home/eligibilityImg.png";
-import rcmImg from "../assests/home/charges-intro.png";
-import reportingImg from "../assests/home/entry.png";
+import rcmImg from "../assests/home/denial1.png";
+import reportingImg from "../assests/home/Denials.avif";
 
 export default function Denial({ onNavigate }) {
   const navigate = useNavigate();
@@ -62,9 +62,6 @@ export default function Denial({ onNavigate }) {
   const benefits = [
     "20–40% recovery of previously denied revenue",
     "Reduced AR days with structured follow-up",
-    "Lower denial rates through root cause fixes",
-    "Weekly transparency with AR and denial reports",
-    "Avoidance of timely filing write-offs",
   ];
 
   const processSteps = [
@@ -357,11 +354,7 @@ export default function Denial({ onNavigate }) {
                 eventually become write-offs.
               </p>
 
-              <p>
-                Revno RCM helps protect earned revenue with disciplined follow-up, stronger
-                appeal documentation, and reporting that helps prevent repeated denial patterns.
-              </p>
-
+           
               <div className="denial-benefit-list">
                 {benefits.map((item) => (
                   <div className="denial-benefit-item denial-reveal" key={item}>

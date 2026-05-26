@@ -55,7 +55,7 @@ export default function About() {
     valueContract: contract,
 
     valueSupport: support,
- 
+
   };
 
   const rcmFlow = [
@@ -88,24 +88,6 @@ export default function About() {
     "Account Managers for each practice",
   ];
 
-  const specialtyTags = [
-    "Family Medicine",
-    "Internal Medicine",
-    "Cardiology",
-    "Orthopedics",
-    "Behavioral Health",
-    "Physical Therapy",
-    "Urgent Care",
-    "Home Health",
-    "Dermatology",
-    "Neurology",
-    "OB/GYN",
-    "Radiology",
-    "Podiatry",
-    "Psychiatry",
-    "Dental",
-    "Chiropractic",
-  ];
 
   const aboutTrustCerts = [
     {
@@ -161,14 +143,32 @@ export default function About() {
     "AHIMA RHIT",
     "HIPAA Certified",
   ];
+  const specialtyLogos = [
+    { title: "Family Medicine", logo: "/logos/specialties/family-medicine.jpg" },
+    { title: "Internal Medicine", logo: "/logos/specialties/internal-medicine.jpg" },
+    { title: "Cardiology", logo: "/logos/specialties/cardiology.jpg" },
+    { title: "Orthopedics", logo: "/logos/specialties/orthopedics.jpg" },
+    { title: "Behavioral Health", logo: "/logos/specialties/behavioral-health.jpg" },
+    { title: "Physical Therapy", logo: "/logos/specialties/physical-therapy.jpg" },
+    { title: "Urgent Care", logo: "/logos/specialties/urgent-care.png" },
+    { title: "Home Health", logo: "/logos/specialties/home-health.jpg" },
+    { title: "Dermatology", logo: "/logos/specialties/dermatology.jpg" },
+    { title: "Neurology", logo: "/logos/specialties/neurology.jpg" },
+    { title: "OB/GYN", logo: "/logos/specialties/ob-gyn.jpg" },
+    { title: "Radiology", logo: "/logos/specialties/radiology.jfif" },
+    { title: "Podiatry", logo: "/logos/specialties/podiatry.PNG" },
+    { title: "Psychiatry", logo: "/logos/specialties/psychiatry.jpg" },
+    { title: "Dental", logo: "/logos/specialties/dental.png" },
+    { title: "Chiropractic", logo: "/logos/specialties/chiropractic.jpg" },
+  ];
 
-  const integrations = [
-    "Epic",
-    "Athenahealth",
-    "eClinicalWorks",
-    "Kareo",
-    "DrChrono",
-    "Nexgen",
+  const integrationLogos = [
+    { title: "Epic", logo: "/logos/ehr/epic.png" },
+    { title: "Athenahealth", logo: "/logos/ehr/athenahealth.png" },
+    { title: "eClinicalWorks", logo: "/logos/ehr/eclinicalworks.png" },
+    { title: "Kareo", logo: "/logos/ehr/kareo.jpg" },
+    { title: "DrChrono", logo: "/logos/ehr/drchrono.webp" },
+    { title: "Nexgen", logo: "/logos/ehr/nexgen.png" },
   ];
 
   useEffect(() => {
@@ -480,11 +480,12 @@ export default function About() {
             </p>
           </div>
 
-          <div className="about-specialty-grid">
-            {specialtyTags.map((tag) => (
-              <span className="about-specialty-pill about-reveal" key={tag}>
-                {tag}
-              </span>
+          <div className="about-specialty-logo-grid">
+            {specialtyLogos.map((item) => (
+              <div className="about-specialty-logo-card about-reveal" key={item.title}>
+                <img src={item.logo} alt={`${item.title} billing specialty`} loading="lazy" />
+                <span>{item.title}</span>
+              </div>
             ))}
           </div>
 
@@ -584,11 +585,11 @@ export default function About() {
               </p>
             </div>
 
-            <div className="tags">
-              {integrations.map((item) => (
-                <span key={item} className="tag">
-                  {item}
-                </span>
+            <div className="ehr-logo-grid">
+              {integrationLogos.map((item) => (
+                <div className="ehr-logo-card" key={item.title}>
+                  <img src={item.logo} alt={`${item.title} EHR integration`} loading="lazy" />
+                </div>
               ))}
             </div>
           </div>

@@ -14,7 +14,7 @@ import {
 
 /* ORIGINAL IMAGES */
 import eligibilityImg from "../assests/home/eligibilityImg.png";
-import billingImg from "../assests/home/why-choose.png";
+import billingImg from "../assests/home/bene.png";
 import reportingImg from "../assests/home/men.png";
 
 export default function Eligibility({ onNavigate }) {
