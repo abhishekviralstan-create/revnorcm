@@ -217,7 +217,7 @@ button {
 
 /* COMMON */
 .charges-section {
-  padding: 92px 0;
+  padding: 32px 0;
   overflow: hidden;
 }
 
@@ -855,5 +855,21 @@ button {
   .charges-feature-card,
   .charges-benefit-card {
     align-items: flex-start;
+  }
+}
+.charges-clean-image{
+  border-radius: 4rem;
+}
+/* Mobile view me What We Do section ki image hide */
+@media (max-width: 768px) {
+  .charges-section.charges-soft
+    .charges-split-grid.reverse
+    > .charges-clean-image-wrap {
+    display: none !important;
+  }
+
+  .charges-section.charges-soft
+    .charges-split-grid.reverse {
+    grid-template-columns: 1fr !important;
   }
 }

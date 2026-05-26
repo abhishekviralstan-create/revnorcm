@@ -2,7 +2,12 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import "../css/chargesentry.css";
-
+import intro from "../assests/home/charges-entry.jpg"
+import entry from "../assests/home/charges-entry2.jpg"
+import charges from "../assests/home/collage1.png";
+import accuracy from "../assests/home/about-small-2.jpeg"
+import code from "../assests/home/code.avif"
+import reconcelletion from "../assests/home/reconcelletion.webp"
 export default function ChargesEntry({ onNavigate }) {
   const navigate = useNavigate();
 
@@ -17,18 +22,13 @@ export default function ChargesEntry({ onNavigate }) {
   };
 
   const images = {
-    intro:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
-    cleanEntry:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-    revenue:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    accuracy:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80",
-    reconciliation:
-      "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=80",
-    review:
-      "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=80",
+    intro:intro,
+    cleanEntry:entry,
+    revenue:charges,
+
+    accuracy:accuracy,
+    reconciliation:code,
+    review:reconcelletion,
   };
 
   const stats = [
@@ -47,16 +47,16 @@ export default function ChargesEntry({ onNavigate }) {
   ];
 
   const features = [
-    "Daily charge entry services for all patient encounters: same day or within 24 hours",
-    "Manual and EHR-integrated charge entry medical billing workflows",
-    "Review superbills and reconcile all charges for complete medical charge capture",
-    "Validate procedure codes and diagnosis codes through accurate medical billing data entry",
-    "Review modifier usage for compliance and reimbursement accuracy",
-    "Verify place of service, location, and rendering provider details",
-    "Identify missing charges through healthcare charge capture gap analysis",
-    "Detect unauthorized, duplicate, or incomplete charges before claim submission",
-    "Support multi-specialty and multi-location charge entry workflows",
-    "Provide daily charge reconciliation reports for accurate charge entry control",
+    "Daily entry of charges for all patient encounters: on the same day or within 24 hours",
+    "Medical billing workflows that include charge entry (manual and integrated with EHR)",
+    "Conduct superbill reviews and reconcile all charges for a full-line item medical charge capture",
+    "Attestations and Medical Billing Data Entry",
+    "Utilization of modifiers with auditing to ensure compliance and accurate reimbursement",
+    "Check details for place of service, location and rendering provider",
+    "Healthcare charge capture gap analysis to identify missing charges",
+    "Identify improper, duplicate and partial payment charges prior to claim submission",
+    "Provides workflows for charge entry (for both multi-specialty and multi-location settings)",
+    "Daily charge reconciliation reports to ensure that charges are entered correctly.",
   ];
 
   const benefits = [
@@ -71,12 +71,12 @@ export default function ChargesEntry({ onNavigate }) {
     {
       image: images.accuracy,
       title: "Encounter Review",
-      desc: "Patient encounters, superbills, and EHR data are reviewed for complete charge capture.",
+      desc: "A review of all patient encounters, superbills, and EHR data are examined for full charge capture.",
     },
     {
       image: images.reconciliation,
       title: "Code & Modifier Check",
-      desc: "Procedure codes, diagnosis codes, modifiers, place of service, and provider details are validated.",
+      desc: "Validation of procedure codes, diagnosis codes, modifiers, place of service & provider.",
     },
     {
       image: images.review,
@@ -90,10 +90,6 @@ export default function ChargesEntry({ onNavigate }) {
     "Superbill / EHR Data Check",
     "Procedure Code Validation",
     "Diagnosis Code Matching",
-    "Modifier Review",
-    "Location & Provider Verification",
-    "Missing Charge Detection",
-    "Daily Charge Reconciliation",
   ];
 
   useEffect(() => {
@@ -305,16 +301,7 @@ export default function ChargesEntry({ onNavigate }) {
             <div className="charges-title-line" />
 
             <p>
-              One incorrect code, one missed modifier, or one unentered service
-              can lead to a denial, underpayment, or lost revenue. Medical charge
-              capture is one of the most important control points in the revenue
-              cycle.
-            </p>
-
-            <p>
-              Revno RCM helps ensure every billable service is entered accurately,
-              every required detail is verified, and every claim starts from a
-              clean foundation before it reaches the payer.
+             Even just one incorrect code, a missed modifier, or a reported but unentered service will result in the denial of payment and lost revenue. Medical charge capture is among the most critical control points of the revenue cycle.
             </p>
 
             <button type="button" onClick={() => goToPage("/contact-us")}>
@@ -322,23 +309,12 @@ export default function ChargesEntry({ onNavigate }) {
             </button>
           </div>
 
-          <div className="charges-image-wrap charges-reveal">
-            <img src={images.intro} alt="Medical charge entry services" />
-
-            <div className="charges-image-badge top">
-              <strong>Accurate Entry</strong>
-              <span>Code & modifier checks</span>
-            </div>
-
-            <div className="charges-image-badge middle">
-              <strong>Clean Claims</strong>
-              <span>Reduced billing errors</span>
-            </div>
-
-            <div className="charges-image-badge bottom">
-              <strong>Fast Posting</strong>
-              <span>Same-day workflow</span>
-            </div>
+          <div className="charges-clean-image-wrap charges-reveal">
+            <img
+              src={images.intro}
+              alt="Medical charge entry services"
+              className="charges-clean-image"
+            />
           </div>
         </div>
       </section>
@@ -346,18 +322,12 @@ export default function ChargesEntry({ onNavigate }) {
       {/* WHAT WE DO */}
       <section className="charges-section charges-soft">
         <div className="charges-container charges-split-grid reverse">
-          <div className="charges-image-wrap charges-reveal">
-            <img src={images.cleanEntry} alt="Clean charge entry workflow" />
-
-            <div className="charges-image-badge top">
-              <strong>Superbill Review</strong>
-              <span>Complete capture</span>
-            </div>
-
-            <div className="charges-image-badge bottom">
-              <strong>EHR Workflow</strong>
-              <span>Integrated support</span>
-            </div>
+          <div className="charges-clean-image-wrap charges-reveal">
+            <img
+              src={images.revenue}
+              alt="Revenue leakage prevention"
+              className="charges-clean-image"
+            />
           </div>
 
           <div className="charges-copy charges-reveal">
@@ -368,15 +338,13 @@ export default function ChargesEntry({ onNavigate }) {
             <div className="charges-title-line" />
 
             <p>
-              Your clinical documentation, superbills, and EHR data contain the
-              complete patient encounter story. Our charge entry team converts
-              that information into clean, complete, and submission-ready claims.
+             Your clinical documentation, superbills and EHR data include the full story of any patient encounter. The accounts receivables information that our charge entry team converts into clean, completed and submission ready claims.
+
             </p>
 
             <p>
-              Provider details, date of service, procedure codes, diagnosis
-              codes, modifiers, place of service, and location are verified to
-              reduce denials, missed charges, and delayed billing timelines.
+             To avoid denials, missed charges and delayed billing timelines, provider details, date of service, procedure codes, diagnosis codes, modifiers, place of service and location are verified.
+
             </p>
           </div>
         </div>
@@ -389,8 +357,8 @@ export default function ChargesEntry({ onNavigate }) {
             <span>Charge Entry Workflow</span>
             <h2>Built for Accuracy Before Claim Submission</h2>
             <p>
-              Our charge entry workflow is designed to prevent revenue leakage,
-              reduce claim errors, and improve billing consistency.
+              Charge entry workflow prevents revenue leakage and claim errors, at the same time achieving consistency in billing.
+
             </p>
           </div>
 
@@ -446,30 +414,22 @@ export default function ChargesEntry({ onNavigate }) {
             <div className="charges-title-line" />
 
             <p>
-              Charge capture failures happen when services are rendered but never
-              billed correctly. These gaps can quietly reduce revenue and create
-              preventable financial leakage across the billing cycle.
+            Charge capture failures occur when services are performed but not accurately charged. Such gaps can deplete revenue quietly and cause avoidable bleeding of financial resources throughout the billing cycle.
+
             </p>
 
             <p>
-              Our healthcare charge capture services help ensure each billable
-              service is entered, validated, reconciled, and converted into a
-              collectible claim.
+         The healthcare charge capture services provide accuracy where every single billable service is entered, validated, reconciled and converted to a collectible claim.
+
             </p>
           </div>
 
-          <div className="charges-image-wrap charges-reveal">
-            <img src={images.revenue} alt="Revenue leakage prevention" />
-
-            <div className="charges-image-badge top">
-              <strong>Revenue Protection</strong>
-              <span>Identify missed charges</span>
-            </div>
-
-            <div className="charges-image-badge bottom">
-              <strong>Daily Reports</strong>
-              <span>Charge reconciliation</span>
-            </div>
+          <div className="charges-clean-image-wrap charges-reveal">
+            <img
+              src={images.cleanEntry}
+              alt="Clean charge entry workflow"
+              className="charges-clean-image"
+            />
           </div>
         </div>
       </section>
@@ -485,9 +445,8 @@ export default function ChargesEntry({ onNavigate }) {
             <div className="charges-title-line" />
 
             <p>
-              Revno RCM follows a structured charge entry lifecycle to ensure
-              each patient encounter is reviewed, coded, validated, and
-              reconciled with accuracy.
+             Revno RCM has a well-defined charge entry lifecycle to validate and establish the accuracy of obtaining each and every patient encounter.
+
             </p>
           </div>
 
@@ -502,37 +461,15 @@ export default function ChargesEntry({ onNavigate }) {
         </div>
       </section>
 
-      {/* BENEFITS */}
-      <section className="charges-section charges-white">
-        <div className="charges-container">
-          <div className="charges-head charges-reveal">
-            <span>Key Benefits</span>
-            <h2>Better Charge Capture. Fewer Errors. Faster Billing.</h2>
-            <p>
-              Accurate charge entry improves billing speed, reduces revenue
-              leakage, and helps claims move cleanly through the revenue cycle.
-            </p>
-          </div>
-
-          <div className="charges-benefit-grid">
-            {benefits.map((item) => (
-              <div className="charges-benefit-card charges-reveal" key={item}>
-                <strong>✓</strong>
-                <p>{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+  
       {/* CTA */}
       <section className="charges-final-cta">
         <div className="charges-container charges-reveal">
           <h2>Close Every Loophole in Your Charge Capture Process</h2>
 
           <p>
-            A missed charge is money left on the table. Revno RCM helps close
-            charge capture gaps and preserve every dollar your practice earns.
+           As the old adage goes, a missed charge is money left on the table. Revno RCM closes charge capture gaps and sustains every dollar your practice earns.
+
           </p>
 
           <button type="button" onClick={() => goToPage("/contact-us")}>

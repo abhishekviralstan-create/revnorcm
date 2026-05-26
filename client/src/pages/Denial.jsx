@@ -13,9 +13,9 @@ import {
 } from "react-icons/fa";
 
 /* ORIGINAL IMAGES */
-import denialImg from "../assests/services/denial.webp";
-import rcmImg from "../assests/services/RCM.png";
-import reportingImg from "../assests/services/reporting-analytics.webp";
+import denialImg from "../assests/home/eligibilityImg.png";
+import rcmImg from "../assests/home/charges-intro.png";
+import reportingImg from "../assests/home/entry.png";
 
 export default function Denial({ onNavigate }) {
   const navigate = useNavigate();

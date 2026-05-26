@@ -13,9 +13,9 @@ import {
 } from "react-icons/fa";
 
 /* ORIGINAL IMAGES */
-import codingImg from "../assests/services/medical-coding.png";
-import billingImg from "../assests/services/medical-billing.png";
-import reportingImg from "../assests/services/reporting-analytics.webp";
+import codingImg from "../assests/home/matters.png";
+import billingImg from "../assests/home/key.png";
+import reportingImg from "../assests/home/why-choose.png";
 
 export default function Coding({ onNavigate }) {
   const navigate = useNavigate();

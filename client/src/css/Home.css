@@ -4810,3 +4810,61 @@ body,
 } .specialties-visual-wrap::before {
   display: none !important;
 }
+/* =========================================
+   HERO INFO CARDS - SAME CASE STUDY ANIMATION
+   Colors unchanged
+========================================= */
+
+.hero-info-card {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden !important;
+  animation: caseCardRise 0.75s ease both !important;
+  animation-delay: var(--case-delay) !important;
+  transition: all 0.35s ease !important;
+}
+
+.hero-info-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+  transform: translateX(-130%);
+  transition: all 0.75s ease;
+  pointer-events: none;
+}
+
+.hero-info-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 38px 95px rgba(0, 20, 55, 0.28) !important;
+}
+
+.hero-info-card:hover::after {
+  transform: translateX(130%);
+}
+
+.hero-info-card h3,
+.hero-info-card p,
+.hero-info-card button,
+.hero-info-card strong {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes caseCardRise {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

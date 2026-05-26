@@ -13,9 +13,9 @@ import {
 } from "react-icons/fa";
 
 /* ORIGINAL IMAGES */
-import eligibilityImg from "../assests/services/eligibility.png";
-import billingImg from "../assests/services/medical-billing.png";
-import reportingImg from "../assests/services/reporting-analytics.webp";
+import eligibilityImg from "../assests/home/eligibilityImg.png";
+import billingImg from "../assests/home/why-choose.png";
+import reportingImg from "../assests/home/men.png";
 
 export default function Eligibility({ onNavigate }) {
   const navigate = useNavigate();
@@ -47,13 +47,13 @@ export default function Eligibility({ onNavigate }) {
   }, []);
 
   const features = [
-    "Live real-time eligibility verification for all payers",
-    "Confirm active coverage, effective dates, and termination",
+    "Real-time Eligibility verification for all the payers",
+    "Verification of existence & validity, start and termination dates",
     "Deductibles, co-pay, co-insurance, and out-of-pocket checks",
     "In-network vs out-of-network benefits verification",
     "Prior authorization requirements identification",
     "COB and secondary insurance verification",
-    "Specialty benefits verification for mental health, PT, and labs",
+    "Benefits verification for mental health, PT and labs by specialty",
     "Verification 24–48 hours before service",
     "Patient financial responsibility calculation",
     "Detailed eligibility report for billing team",
@@ -71,22 +71,22 @@ export default function Eligibility({ onNavigate }) {
     {
       icon: <FaRegFileAlt />,
       title: "Coverage Verification",
-      text: "We verify active coverage, effective dates, plan status, and payer-specific benefit details before service.",
+      text: "Prior to service, we confirm active coverage, effective dates, plan status and payer-specific benefit details.",
     },
     {
       icon: <FaMoneyBillWave />,
       title: "Patient Responsibility",
-      text: "Copays, deductibles, coinsurance, and out-of-pocket balances are checked to support clear patient communication.",
+      text: "They check copays, deductibles, coinsurance, and out-of-pocket balances to encourage clear communication with patients.",
     },
     {
       icon: <FaShieldAlt />,
       title: "Prior Auth Review",
-      text: "Authorization requirements, referrals, and payer restrictions are identified early to prevent avoidable denials.",
+      text: "Authorization?, referrals?, payer restrictions? All identified up front to avoid denials BEFORE services are performed.",
     },
     {
       icon: <FaUserMd />,
       title: "Billing Team Report",
-      text: "Your team receives clear eligibility notes, benefit findings, and action items before the patient visit.",
+      text: "Your team gets clear eligibility notes, benefit determinations, and action items to take before the patient visit.",
     },
   ];
 
@@ -229,11 +229,11 @@ export default function Eligibility({ onNavigate }) {
               <strong>Eligibility Verification</strong>
             </div>
 
-            <h1 className="elig-reveal">Eligibility & Benefits Verification Services</h1>
+            <h1 className="elig-reveal">Eligibility & Benefits Verification</h1>
 
             <p className="elig-reveal">
-              Verify patient coverage, benefits, copays, deductibles, and prior authorization
-              requirements before service to reduce denials and protect revenue.
+              Ensure patient coverage, benefits, copays and deductibles and if prior auth is needed - before service; helps reduce denials and secure revenue.
+
             </p>
           </div>
         </section>
@@ -243,20 +243,18 @@ export default function Eligibility({ onNavigate }) {
           <div className="elig-container elig-split">
             <div className="elig-content elig-reveal elig-left">
               <span className="elig-kicker">What We Do</span>
-              <h2>Eligibility Checks That Prevent Denials Before They Start</h2>
+              <h2>Eligibility Checks That Stop Denials Before They Happen
+              </h2>
               <div className="elig-title-line" />
 
               <p>
-                Eligibility issues are one of the most common reasons claims get denied.
-                When coverage, copays, deductibles, plan limitations, or authorization
-                requirements are missed before the visit, practices face avoidable denials,
-                write-offs, and delayed collections.
+                One of the most common reasons for claims to be denied is eligibility issues. If offices miss coverage, copays, deductibles, plan limitations or authorization requirements up front (before the patient arrives) practices will incur unnecessary denials, write-offs and delayed collections.
+
               </p>
 
               <p>
-                Revno RCM verifies patient insurance before service, confirms benefit
-                details, calculates patient responsibility, and flags payer requirements
-                so your billing team has clarity before the appointment.
+                Revno RCM pre-qualifies patient insurance prior to service, verifies all benefit details, calculates patient responsibility and highlights payer requirements so your billing team never goes in blind for an appointment or test.
+
               </p>
 
               <button
@@ -285,8 +283,8 @@ export default function Eligibility({ onNavigate }) {
               <span className="elig-kicker">Verification Workflow</span>
               <h2>Complete Eligibility Verification Support</h2>
               <p>
-                A structured verification process that gives your front desk, billing team,
-                and patients better financial clarity before care is delivered.
+             An organized verification process that provides your front desk, billing team and patients with greater financial clarity prior to care.
+
               </p>
             </div>
 
@@ -316,19 +314,18 @@ export default function Eligibility({ onNavigate }) {
 
             <div className="elig-content elig-reveal elig-right">
               <span className="elig-kicker">Why This Matters</span>
-              <h2>Eligibility Errors Turn Into Lost Revenue</h2>
+              <h2>Lost Revenue due to Eligibility Errors
+</h2>
               <div className="elig-title-line" />
 
               <p>
-                Missed eligibility checks can lead to denied claims, incorrect patient
-                balances, delayed follow-up, and preventable revenue leakage. Verifying
-                coverage before the visit helps your team reduce billing surprises and
-                submit cleaner claims.
+             These missed eligibility checks can result in, denied claims, incorrect patient balances, delayed follow-up and ultimately revenue leakage that can all easily be avoided. Confirming coverage prior to the appointment allows your team to minimize unexpected billing and file cleaner claims.
+
               </p>
 
               <p>
-                Revno RCM helps practices identify payer restrictions, secondary insurance,
-                authorization requirements, and patient responsibility early in the process.
+               The RCM revno helps practices recognize payer restrictions, secondary insurance, authorization requirements and patient responsibility as early in the process as possible.
+
               </p>
             </div>
           </div>
@@ -341,8 +338,8 @@ export default function Eligibility({ onNavigate }) {
               <span className="elig-kicker">Key Features & Capabilities</span>
               <h2>Accurate Insurance Verification Services</h2>
               <p>
-                From active coverage checks to prior authorization alerts, our team supports
-                every eligibility touchpoint with accuracy and speed.
+              Our team accurately and quickly serves every eligibility touchpoint, from active coverage checks to prior authorization alerts.
+
               </p>
             </div>
 
@@ -393,8 +390,8 @@ export default function Eligibility({ onNavigate }) {
             <span className="elig-kicker">Free RCM Audit</span>
             <h2>Stop Revenue Leakage Before the Claim Is Filed</h2>
             <p>
-              Don’t let missed eligibility checks create denials, delays, and patient
-              balance confusion. Start verifying smarter with Revno RCM.
+            Avoid denials, delays and patient balance confusion from missed eligibility checks. Shift to smarter verification, Get started with Revno RCM
+
             </p>
 
             <button type="button" onClick={() => goToPage("/contact-us")}>

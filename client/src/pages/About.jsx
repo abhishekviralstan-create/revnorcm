@@ -2,6 +2,20 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import "../css/about.css";
+import aboutDoctorImg from "../assests/home/about-us-page.png";
+import aboutMenImg from "../assests/home/why-choose.png";
+import eligibility from "../assests/home/Eligibility.jpg"
+import coding from "../assests/home/coding.webp"
+import iso from "../assests/home/iso.jpg"
+import hippa from "../assests/home/hippa.jpg"
+import claim from "../assests/home/claim.png"
+import rndenial from "../assests/home/rndenial.webp"
+import accuracy from "../assests/home/Accuracy.avif";
+import denial from "../assests/home/Denials.avif"
+import hippa2 from "../assests/home/hippa.avif"
+import reporting from "../assests/home/reporting.avif"
+import contract from "../assests/home/contracts.avif"
+import support from "../assests/home/support.png"
 
 export default function About() {
   const navigate = useNavigate();
@@ -12,86 +26,66 @@ export default function About() {
   };
 
   const images = {
-    heroPanel:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
 
-    whoWeAre:
-      "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=1200&q=80",
 
-    rcmEligibility:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80",
+    whoWeAre: aboutDoctorImg,
 
-    rcmCoding:
-      "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=80",
+    rcmEligibility: eligibility,
 
-    rcmClaims:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
+    rcmCoding: coding,
 
-    rcmAR:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+    rcmClaims: claim,
 
-    whyChoose:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    rcmAR: rndenial,
 
-    iso:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80",
+    whyChoose: aboutMenImg,
 
-    hipaa:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+    iso: iso,
 
-    valueAccuracy:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
+    hipaa: hippa,
 
-    valueDenials:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80",
+    valueAccuracy: accuracy,
 
-    valueHipaa:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80",
+    valueDenials: denial,
 
-    valueReports:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+    valueHipaa: hippa2,
 
-    valueContract:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80",
+    valueReports: reporting,
 
-    valueSupport:
-      "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=900&q=80",
+    valueContract: contract,
 
-    certification:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80",
-
-    security:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80",
+    valueSupport: support,
+ 
   };
 
   const rcmFlow = [
     {
       image: images.rcmEligibility,
       title: "Eligibility & Authorization",
-      text: "Verify patient coverage, payer rules, and authorization requirements before the visit.",
+      text: "Pre-visit verification of patient coverage, payer rules, and authorization requirements.",
     },
     {
       image: images.rcmCoding,
       title: "Coding & Claim Accuracy",
-      text: "Improve ICD-10, CPT, modifier, and documentation accuracy before submission.",
+      text: "Before submitting, enhance accuracy with ICD-10, CPT modifiers and documentation.",
     },
     {
       image: images.rcmClaims,
       title: "Claim Submission",
-      text: "Submit cleaner claims and reduce avoidable billing errors across payer workflows.",
+      text: "Make clean claims submission and eliminate avoidable billing errors throughout the clinical, financial, and payor continuum.",
     },
     {
       image: images.rcmAR,
       title: "AR & Denial Follow-Up",
-      text: "Track unpaid claims, manage denials, and accelerate reimbursement cycles.",
+      text: "Monitor unpaid claims, denial management, and speed up the reimbursement cycle.",
     },
   ];
 
   const whyChooseAbout = [
-    "10+ years of specialty-focused RCM expertise",
+    "Over 10 years of RCM focused on specific specialties",
     "Complete end-to-end revenue cycle support",
-    "HIPAA-compliant billing and secure data handling",
-    "Dedicated account managers for every practice",
+    "Billing compliant with HIPAA and secure data processing",
+    "Account Managers for each practice",
   ];
 
   const specialtyTags = [
@@ -130,32 +124,32 @@ export default function About() {
     {
       image: images.valueAccuracy,
       title: "Specialty-Focused Expertise",
-      text: "Deep billing experience across multiple healthcare specialties with payer-specific workflows.",
+      text: "We have broad billing experience across specialty types with payer-specific workflows.",
     },
     {
       image: images.valueDenials,
       title: "Proactive Denial Prevention",
-      text: "We identify denial risks early and fix issues before claims turn into rejections.",
+      text: "We caught denial risks in advance and stop the issues so claims never grow to be denials.",
     },
     {
       image: images.valueHipaa,
       title: "HIPAA-Certified Team",
-      text: "Compliance-trained billing specialists follow secure workflows and privacy-first processes.",
+      text: "Compliance-trained billers work within secure workflows and privacy-first processes.",
     },
     {
       image: images.valueReports,
       title: "Real-Time Reporting",
-      text: "Clear dashboards and revenue visibility help you track collections, AR, and performance.",
+      text: "Insightful dashboards and monetization visibility empowers you to track your collections, AR and overall performance.",
     },
     {
       image: images.valueContract,
       title: "No Long-Term Contracts",
-      text: "We focus on measurable results and re-earn your business through consistent performance.",
+      text: "We deliver measurable outcomes and earn your business over and over again through repeatable performance.",
     },
     {
       image: images.valueSupport,
       title: "Dedicated Support",
-      text: "Responsive account managers support your practice with regular updates and follow-ups.",
+      text: "You have dedicated account managers who routinely update contacts and follow up with them.",
     },
   ];
 
@@ -329,9 +323,8 @@ export default function About() {
             <h1>About Revno RCM</h1>
 
             <p>
-              A trusted medical billing and HIPAA-compliant RCM company helping
-              healthcare providers take control of collections, compliance, claim
-              performance, and long-term revenue growth.
+              A Trusted RCM company helping healthcare providers take control of collections, compliance, claim performance and long-term revenue growth that is HIPAA-compliant and trusted with the billing.
+
             </p>
           </div>
         </div>
@@ -344,33 +337,27 @@ export default function About() {
             <div className="about-intro-content">
               <span className="about-sec-kicker">Who We Are</span>
 
-              <h2>Built for Healthcare Providers Who Want Financial Control</h2>
+              <h2>Designed for the Healthcare Provider.</h2>
 
               <div className="about-title-line" />
 
               <p>
-                Revno RCM is a medical billing company and trusted HIPAA-compliant
-                billing partner built with one clear mission — helping healthcare
-                providers take full control of their revenue cycle without
-                overloading staff, time, or compliance resources.
+                Revno RCM is an all-in-one medical billing company and HIPAA-compliant billing partner with one mission statement — support healthcare providers in taking complete charge of their revenue cycle without putting anyone over the limit on staff, time, or compliance.
               </p>
 
-              <p>
-                We understand the daily pressure physicians, practice managers,
-                and healthcare administrators face: strict payer regulations,
-                changing coding rules, claim denials, delayed reimbursements, and
-                the challenge of getting paid correctly for every encounter.
-              </p>
+
 
               <p>
-                Revno RCM was created to solve these problems. Our certified
-                medical billing experts, coders, and compliance specialists work
-                as an extension of your practice — not just as another vendor.
+                Revno RCM is here to solve these problems. Working as part of your practice, our certified medical billing experts, coders and compliance specialists are not just another vendor.
               </p>
             </div>
 
-            <div className="about-who-image-wrap">
-              <img src={images.whoWeAre} alt="Revno RCM healthcare billing team" />
+            <div className="about-home-style-image about-who-image-wrap">
+              <img
+                src={images.whoWeAre}
+                alt="Revno RCM healthcare billing team"
+                className="about-transparent-doctor-img"
+              />
             </div>
           </div>
         </div>
@@ -382,12 +369,11 @@ export default function About() {
           <div className="mission-card about-reveal">
             <span className="about-sec-kicker">Our Mission</span>
 
-            <h2>Transparent, Data-Driven RCM That Protects Every Dollar</h2>
+            <h2>Transparent, Data-Driven Protection For Every Dollar
+            </h2>
 
             <p>
-              We provide transparent, data-driven, and result-oriented RCM services
-              so healthcare providers can focus on patient care while we ensure
-              every dollar is captured, tracked, and optimized.
+              Our revenue cycle management services are transparent, data-driven and results-oriented so providers get to spend their time ensuring the care of patients while we utilize every single dollar that needs to be captured, tracked and optimized.
             </p>
           </div>
         </div>
@@ -404,17 +390,12 @@ export default function About() {
             <div className="about-title-line" />
 
             <p>
-              Revenue Cycle Management, or RCM, is the complete financial process
-              that keeps a healthcare organization running smoothly. It starts
-              before the patient visit with eligibility checks and authorization,
-              then continues through coding, claim submission, payment posting,
-              denial management, and final collections.
+              This is called Revenue Cycle Management, or RCM, the comprehensive financial process that allows a health care organization to function. The process begins before the patient even walks in for their visit, with eligibility and authorization checks; proceeds through coding, claim submission, payment posting, denial management, and finally collections.
             </p>
 
             <p>
-              When RCM is managed properly, your practice gets paid faster, avoids
-              avoidable denials, improves cash flow, and reduces administrative
-              pressure on your internal team.
+              With RCM done right, your practice is paid faster without avoidable denials while improving cash flow and relieving administrative burden on your staff.
+
             </p>
 
             <button
@@ -445,23 +426,12 @@ export default function About() {
       {/* WHY CHOOSE US */}
       <section className="about-section about-why-section">
         <div className="about-container about-split-grid reverse">
-          <div className="about-why-image-wrap about-reveal">
-            <img src={images.whyChoose} alt="Revno RCM healthcare billing support" />
-
-            <div className="about-image-badge top">
-              <strong>Cleaner Claims</strong>
-              <span>Fewer billing errors</span>
-            </div>
-
-            <div className="about-image-badge middle">
-              <strong>Lower Denials</strong>
-              <span>Better payer follow-up</span>
-            </div>
-
-            <div className="about-image-badge bottom">
-              <strong>Faster Payments</strong>
-              <span>Improved cash flow</span>
-            </div>
+          <div className="about-home-style-image about-why-image-wrap about-reveal">
+            <img
+              src={images.whyChoose}
+              alt="Revno RCM healthcare billing support"
+              className="about-transparent-doctor-img"
+            />
           </div>
 
           <div className="about-section-copy about-reveal">
@@ -472,9 +442,8 @@ export default function About() {
             <div className="about-title-line" />
 
             <p>
-              We combine specialty billing knowledge, denial prevention,
-              compliance-focused workflows, and real-time reporting to help
-              healthcare providers build a stronger financial operation.
+              Specialty billing intelligence, denial avoidance, compliance-driven workflows, and instant reporting all combine to help providers strengthen their financial operation.
+
             </p>
 
             <div className="about-points-list">
@@ -506,10 +475,8 @@ export default function About() {
             <h2>Industries & Specialties We Serve</h2>
 
             <p>
-              Revno RCM supports healthcare providers across multiple specialties
-              with dedicated billing and coding workflows that match
-              specialty-specific payer rules, documentation standards, and
-              compliance requirements.
+              With dedicated billing and coding workflows aligned to specialty-specific payer rules, documentation standards and compliance requirements, Revno RCM serves healthcare providers across multiple specialties.
+
             </p>
           </div>
 
@@ -544,9 +511,8 @@ export default function About() {
             <div className="about-title-line" />
 
             <p>
-              Revno RCM follows secure, compliant, and quality-focused billing
-              processes. Our standards support accurate healthcare billing, safe
-              data handling, and reliable revenue cycle operations.
+              Billing Processes at Revno RCM are Secure,-Compliant and Quality Driven. Our standards enable health care billers to accurately implement, process & handle data in a safe manner and subsequently settle revenue cycles reliably.
+
             </p>
           </div>
 
@@ -575,8 +541,8 @@ export default function About() {
             <h2>Why Providers Choose Revno RCM</h2>
 
             <p>
-              Our process is built around cleaner claims, compliance,
-              transparency, and measurable financial improvement.
+              Our system is built around cleaner claims, compliance with those clearer two roles and, therefore for the organization transparency that sees through it, where the financial benefits become measurable.
+
             </p>
           </div>
 
@@ -600,7 +566,7 @@ export default function About() {
         </div>
       </section>
 
-   
+
 
       {/* TECHNOLOGY */}
       <section className="about-section about-white">
@@ -614,8 +580,7 @@ export default function About() {
               <div className="about-title-line" />
 
               <p>
-                We integrate with top EHR systems with minimal setup and zero
-                workflow disruption.
+                We connect with leading EHRs with no setup and zero workflow change.
               </p>
             </div>
 
@@ -636,8 +601,7 @@ export default function About() {
           <h2>Ready to Work With a Trusted RCM Partner?</h2>
 
           <p>
-            Increase collections, reduce denials, and take control of your revenue
-            cycle today.
+            Boost collections, decrease denials and take control of your revenue cycle now.
           </p>
 
           <button type="button" onClick={() => goToPage("/contact-us")}>

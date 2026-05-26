@@ -209,7 +209,7 @@ button {
 .rcm-process-section,
 .rcm-steps-section,
 .rcm-benefits-section {
-  padding: 92px 0;
+  padding: 25px 0;
   overflow: hidden;
 }
 
@@ -799,5 +799,108 @@ button {
     box-shadow:
       0 8px 20px rgba(0, 47, 104, 0.08),
       0 18px 46px rgba(0, 47, 104, 0.09) !important;
+  }
+}
+/* =====================================================
+   RCM PROCESS IMAGE ONLY SECTION
+   Card remove + bottom fade effect
+===================================================== */
+
+.rcm-process-image-wrap {
+  position: relative !important;
+  width: 100% !important;
+  min-height: clamp(360px, 42vw, 560px) !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  padding: 0 !important;
+}
+
+/* image only */
+.rcm-process-image {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  max-width: 560px !important;
+  height: auto !important;
+  max-height: 560px !important;
+  display: block !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+
+  /* bottom fade effect */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 72%,
+    rgba(0, 0, 0, 0.78) 86%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 72%,
+    rgba(0, 0, 0, 0.78) 86%,
+    transparent 100%
+  );
+}
+
+/* old flow/card css effect remove if old class remains anywhere */
+.rcm-flow-panel,
+.rcm-flow-orbit,
+.rcm-flow-list,
+.rcm-flow-badges {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* hover zoom remove */
+.rcm-process-image-wrap:hover .rcm-process-image {
+  transform: none !important;
+  filter: none !important;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .rcm-process-image-wrap {
+    min-height: 430px !important;
+  }
+
+  .rcm-process-image {
+    max-width: 500px !important;
+    max-height: 500px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .rcm-process-image-wrap {
+    min-height: 360px !important;
+    margin-top: 10px !important;
+  }
+
+  .rcm-process-image {
+    max-width: 430px !important;
+    max-height: 390px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .rcm-process-image-wrap {
+    min-height: 310px !important;
+  }
+
+  .rcm-process-image {
+    max-width: 340px !important;
+    max-height: 330px !important;
   }
 }

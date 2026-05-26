@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import "../css/rcm.css";
-
+import rcmProcessImg from "../assests/home/rcm-s.png";
 export default function RCM() {
   const navigate = useNavigate();
 
@@ -14,31 +14,31 @@ export default function RCM() {
   const steps = [
     {
       title: "Patient Registration & Insurance Verification",
-      desc: "Demographics, eligibility, and coverage are verified before service to reduce avoidable eligibility-related claim rejections.",
+      desc: "Eligibility, demographics and coverage verification is done before service to minimize avoidable claim denials due to eligibility issues.",
     },
     {
       title: "Prior Authorization & Pre-Certification",
-      desc: "Authorization requirements are handled before services are rendered to reduce payer denials and reimbursement delays.",
+      desc: "Performing authorization prerequisites prior to services are rendered limits payer denials and extends the time before reimbursement.",
     },
     {
       title: "Medical Coding",
-      desc: "Certified coders assign accurate ICD-10, CPT, and HCPCS codes to support compliance and appropriate reimbursement.",
+      desc: "Enter certified coders who assign correct ICD-10, CPT, and HCPCS codes to ensure appropriate reimbursement while supporting compliance.",
     },
     {
       title: "Charge Capture & Claims Submission",
-      desc: "Charges are reviewed, claims are scrubbed, and submissions are sent cleanly to payers for faster payment cycles.",
+      desc: "Instead, you can have charges scrubbed for claims so that clean submissions are sent off quickly to payers, resulting in faster payment cycles.",
     },
     {
       title: "Payment Posting & Reconciliation",
-      desc: "ERA/EOB payments are posted accurately with reconciliation to identify underpayments, adjustments, and patient balances.",
+      desc: "Payments received via electronic remittance advice (ERA)/explanation of benefits (EOB) are posted correctly; reconciliation points out underpayments, adjustments, and patient balances.",
     },
     {
       title: "Denial Management & Appeals",
-      desc: "Denied claims are analyzed by root cause, corrected, appealed, and followed up within payer timelines.",
+      desc: "Data on denied claims is analysed by root cause; corrections are made, appeals filed and followed up within payer timelines.",
     },
     {
       title: "A/R Follow-Up & Reporting",
-      desc: "Outstanding claims are tracked with structured follow-up, monthly reporting, and KPI visibility for better cash flow control.",
+      desc: "Structured follow-up, monthly reporting and KPI visibility are leveraged to manage claims with a view to improving cash flow.",
     },
   ];
 
@@ -70,35 +70,35 @@ export default function RCM() {
   const benefits = [
     {
       title: "Faster Reimbursements",
-      desc: "Cleaner claim workflows help reduce delays and improve payment turnaround.",
+      desc: "It helps to reduce delays & fast pace payment turnaround with cleaner claim workflow",
     },
     {
       title: "Reduced Denials",
-      desc: "Eligibility checks, authorization tracking, and coding audits help prevent avoidable denials.",
+      desc: "This includes eligibility checks, authorization tracking and even coding audits to stave off avoidable denials.",
     },
     {
       title: "Improved Cash Flow",
-      desc: "Structured AR follow-up and payment posting give better control over outstanding revenue.",
+      desc: "AR follow up and payment posting is more structured, leading to better control over outstanding revenues.",
     },
     {
       title: "Clear Reporting",
-      desc: "Revenue cycle dashboards help providers understand collections, denials, AR, and payer trends.",
+      desc: "Revenue cycle dashboards explain how the provider is performing on collections, denials, AR, and payer trends.",
     },
     {
       title: "Compliance-Focused Billing",
-      desc: "HIPAA-compliant workflows and trained billing teams support secure revenue cycle operations.",
+      desc: "Billing teams in charge of the revenue cycle are trained using HIPAA-compliant workflows.",
     },
     {
       title: "Dedicated RCM Support",
-      desc: "Your practice receives responsive support for billing, coding, claims, denials, and reporting.",
+      desc: "You get responsive support for your practice, billing, coding, claims, denials and reporting.",
     },
   ];
 
   const auditPoints = [
-    "Claim rejection and denial pattern review",
+    "Review of trends in claim rejection and denial",
     "Eligibility and authorization workflow analysis",
-    "Coding, modifier, and documentation gap review",
-    "AR aging and payer follow-up assessment",
+    "Gap review with respect to coding, modifier",
+    "AR aging and assessment on payer follow-up",
     "Payment posting and underpayment visibility",
     "Revenue cycle improvement recommendations",
   ];
@@ -273,12 +273,12 @@ export default function RCM() {
             <span>RCM Services</span>
           </div>
 
-          <h1>End-to-End Revenue Cycle Management Services</h1>
+          <h1>End-to-End RCM Services
+          </h1>
 
           <p>
-            Complete RCM support from patient registration to final payment —
-            designed to reduce denials, improve collections, shorten AR days,
-            and strengthen healthcare cash flow.
+            Full RCM support, from patient registration to final payment  built to eliminate denials, streamline collections, reduce AR days and enhance healthcare cash flow.
+
           </p>
         </div>
       </section>
@@ -303,19 +303,19 @@ export default function RCM() {
           <div className="rcm-copy rcm-reveal">
             <span className="rcm-kicker">Complete Lifecycle</span>
 
-            <h2>How Revno RCM Works — Step by Step</h2>
+            <h2>Revno RCM works — step by step
+            </h2>
 
             <div className="rcm-title-line" />
 
             <p>
-              Our revenue cycle process connects front-end verification, coding,
-              claims, payment posting, denial resolution, and AR follow-up into
-              one structured workflow.
+              Our RCM process integrates front-end verification, coding, claims, payment posting denial resolution and AR follow-up into one standard workflow.
+
             </p>
 
             <p>
-              Each step is built to reduce avoidable errors, improve first-pass
-              acceptance, and help your practice get paid faster.
+              Every detailed process is designed to eliminate common errors, enhance first-pass acceptance and get your practice paid sooner.
+
             </p>
 
             <button type="button" onClick={() => goToPage("/contact-us")}>
@@ -323,28 +323,12 @@ export default function RCM() {
             </button>
           </div>
 
-          <div className="rcm-flow-panel rcm-reveal">
-            <div className="rcm-flow-orbit" />
-
-            <div className="rcm-flow-list">
-              {flowItems.map((item, index) => (
-                <div
-                  className={`rcm-flow-item ${
-                    index === 2 ? "highlight" : ""
-                  }`}
-                  key={item}
-                >
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <p>{item}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="rcm-flow-badges">
-              <span>✓ First-Pass Acceptance</span>
-              <span>✓ Reduced AR Days</span>
-              <span>✓ Lower Denials</span>
-            </div>
+          <div className="rcm-process-image-wrap rcm-reveal">
+            <img
+              src={rcmProcessImg}
+              alt="Revno RCM revenue cycle management process"
+              className="rcm-process-image"
+            />
           </div>
         </div>
       </section>
@@ -354,10 +338,10 @@ export default function RCM() {
         <div className="rcm-container">
           <div className="rcm-head rcm-reveal">
             <span>RCM Workflow</span>
-            <h2>Every Step Built for Cleaner Claims & Faster Payments</h2>
+            <h2>Each Step Designed for Quality Claims & Quick Payments</h2>
             <p>
-              Revno RCM helps healthcare providers reduce friction across the
-              entire billing lifecycle with structured, measurable workflows.
+              Revno RCM helps healthcare providers reduce friction across the billing lifecycle with structured, tangible workflows.
+
             </p>
           </div>
 
@@ -377,18 +361,16 @@ export default function RCM() {
         </div>
       </section>
 
-  {/* AUDIT */}
+      {/* AUDIT */}
       <section className="rcm-audit-section">
         <div className="rcm-container rcm-audit-layout">
           <div className="rcm-copy white rcm-reveal">
             <span className="rcm-kicker">Free Revenue Cycle Review</span>
 
-            <h2>Find Out Where Revenue Is Slipping Through</h2>
+            <h2>Identify leakages in revenue</h2>
 
             <p>
-              Our RCM specialists review your billing process, identify denial
-              patterns, check workflow gaps, and show opportunities to improve
-              collections.
+              Our RCM experts analyze your billing processes, denial trends, identify workflow loopholes and reveal opportunities to maximize collections.
             </p>
 
             <button type="button" onClick={() => goToPage("/contact-us")}>
@@ -413,8 +395,7 @@ export default function RCM() {
             <span>Benefits</span>
             <h2>What Your Practice Gains With Revno RCM</h2>
             <p>
-              Our end-to-end RCM process supports stronger billing operations,
-              fewer revenue leaks, and better financial visibility.
+              Our RCM process, from initial patient outreach to final payment, helps create a stronger billing operation with fewer revenue leaks and improved financial visibility.
             </p>
           </div>
 
@@ -430,7 +411,7 @@ export default function RCM() {
         </div>
       </section>
 
-    
+
 
       {/* CTA */}
       <section className="rcm-final-cta">
@@ -438,8 +419,8 @@ export default function RCM() {
           <h2>Ready to Optimize Your Revenue Cycle?</h2>
 
           <p>
-            Our RCM specialists will audit your current process and show you
-            exactly where revenue is slipping through.
+           Your existing process will be reviewed by our RCM experts, who will pinpoint precisely where you are losing revenue.
+
           </p>
 
           <button type="button" onClick={() => goToPage("/contact-us")}>

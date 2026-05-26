@@ -312,7 +312,7 @@ button {
 
 .about-section {
   position: relative;
-  padding: 92px 0;
+  padding: 20px 0;
   overflow: hidden;
   background: linear-gradient(180deg, #f8fbff 0%, #eef7ff 100%);
 }
@@ -395,12 +395,6 @@ button {
   gap: 44px;
   align-items: center;
   padding: 46px;
-  border-radius: 34px;
-  background:
-    radial-gradient(circle at top right, rgba(114, 191, 22, 0.12), transparent 34%),
-    #ffffff;
-  border: 1px solid rgba(0, 47, 104, 0.08);
-  box-shadow: var(--revno-shadow);
 }
 
 .about-intro-content {
@@ -1563,5 +1557,125 @@ button {
 
   .about-breadcrumb {
     margin-bottom: 18px !important;
+  }
+}/* ================================
+   ABOUT PAGE IMAGE ONLY FIX
+   No card, no frame, bottom fade only
+================================ */
+
+.about-home-style-image,
+.about-who-image-wrap,
+.about-why-image-wrap {
+  position: relative !important;
+  width: 100% !important;
+  min-height: clamp(340px, 42vw, 520px) !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  padding: 0 !important;
+}
+
+/* Old card overlays, border frame, bg effects remove */
+.about-home-style-image::before,
+.about-home-style-image::after,
+.about-who-image-wrap::before,
+.about-who-image-wrap::after,
+.about-why-image-wrap::before,
+.about-why-image-wrap::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Extra bg/shadow spans remove */
+.about-home-image-bg,
+.about-home-image-shadow {
+  display: none !important;
+}
+
+/* Floating cards/badges remove */
+.about-image-badge,
+.about-hero-image-card,
+.about-who-floating-card,
+.about-who-mini-stats {
+  display: none !important;
+}
+
+/* Main transparent image */
+.about-transparent-doctor-img,
+.about-who-image-wrap img,
+.about-why-image-wrap img {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  max-width: 560px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: 540px !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  display: block !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+
+  /* Bottom fade only */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 72%,
+    rgba(0, 0, 0, 0.75) 86%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 72%,
+    rgba(0, 0, 0, 0.75) 86%,
+    transparent 100%
+  );
+}
+
+/* Hover zoom old effect remove */
+.about-home-style-image:hover img,
+.about-who-image-wrap:hover img,
+.about-why-image-wrap:hover img {
+  transform: none !important;
+  filter: none !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .about-home-style-image,
+  .about-who-image-wrap,
+  .about-why-image-wrap {
+    min-height: 360px !important;
+  }
+
+  .about-transparent-doctor-img,
+  .about-who-image-wrap img,
+  .about-why-image-wrap img {
+    max-width: 430px !important;
+    max-height: 390px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-home-style-image,
+  .about-who-image-wrap,
+  .about-why-image-wrap {
+    min-height: 310px !important;
+  }
+
+  .about-transparent-doctor-img,
+  .about-who-image-wrap img,
+  .about-why-image-wrap img {
+    max-width: 340px !important;
+    max-height: 330px !important;
   }
 }

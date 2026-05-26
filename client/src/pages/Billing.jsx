@@ -2,7 +2,11 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "../css/billing.css";
-
+import claim from "../assests/home/claim.png"
+import coding from "../assests/home/coding.webp"
+import tracking from "../assests/home/reporting.avif"
+import ar from "../assests/home/about-small-2.jpeg"
+import medical from "../assests/services/medical-billing.png"
 export default function Billing() {
   const navigate = useNavigate();
 
@@ -12,16 +16,11 @@ export default function Billing() {
   };
 
   const images = {
-    main:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-    claim:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
-    coding:
-      "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=80",
-    payment:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-    audit:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80",
+    main: medical,
+    claim: claim,
+    coding: coding,
+    payment: tracking,
+    audit: ar,
   };
 
   const stats = [
@@ -40,81 +39,74 @@ export default function Billing() {
   ];
 
   const billingBenefits = [
-    "Remove the cost of internal billing staff — salary, training, benefits, and turnover",
-    "Access specialty medical billing with certified experts for every specialty",
-    "Pre-submission claim scrubbing to reduce denials and billing errors",
-    "Most claims processed within 14–21 days for faster payment",
-    "Stay current with ICD-10, CPT updates, and payer policy changes",
-    "Scale billing capacity without hiring or layoffs",
+    "Scrub Claims prior to submittal - Reduce Denials and billing errors",
+    "Quick Payment- Most claims are processed within 14–21 days.",
+    "Scale billing capacity without hiring or layoffs ",
   ];
 
   const processCards = [
     {
       image: images.claim,
       title: "Claim Scrubbing",
-      desc: "Claims are reviewed before submission to reduce avoidable errors, missing information, and payer rejections.",
+      desc: "Pre-submission review of claims mitigates such preventable errors, information gaps and payer-rejections.",
     },
     {
       image: images.coding,
       title: "Coding Accuracy",
-      desc: "Billing workflows are supported by accurate ICD-10, CPT, HCPCS, and modifier checks.",
+      desc: "Supports billing workflow, accurate ICD-10, CPT, HCPCS and modifier checks.",
     },
     {
       image: images.payment,
       title: "Payment Tracking",
-      desc: "Submitted claims, payments, adjustments, and open balances are tracked for clearer revenue visibility.",
+      desc: "The metric to track is submission claims, payments amount, claim adjustment & open balances for better revenue visibility.",
     },
     {
       image: images.audit,
       title: "AR Follow-Up",
-      desc: "Aging claims are followed with discipline so unpaid revenue does not sit unresolved.",
+      desc: "Aging claims are tracked with diligence so that accrued revenue does not remain unresolved.",
     },
   ];
 
   const specialties = [
     {
       title: "Internal Medicine & Family Practice",
-      desc: "Comprehensive billing for primary care, chronic care management, preventive services, and E&M visits.",
+      desc: "Overview of billing for primary care, chronic Care Management, and preventive services, E&M visits.",
     },
     {
       title: "Cardiology & Interventional",
-      desc: "Expert billing for cardiac procedures, catheterizations, stress testing, and interventional services.",
+      desc: "Cardiac procedures, catheterizations, stress testing and interventional services billed by experts.",
     },
     {
       title: "Orthopedics & Sports Medicine",
-      desc: "Precise coding for surgical and non-surgical orthopedic services, joint procedures, and sports injury care.",
+      desc: "Detailed coding accuracy for surgical and non-surgical orthopedic services, joint procedures and sports injury care.",
     },
     {
       title: "Behavioral Health & Psychiatry",
-      desc: "Specialized billing for mental health services, therapy, psychiatry, and substance use treatment.",
+      desc: "Mental health, Psychotherapy, Psychiatry and Drug rehab billing",
     },
     {
       title: "Physical & Occupational Therapy",
-      desc: "Accurate billing for therapy services, functional evaluations, and rehabilitation programs.",
+      desc: "Billing For Therapy and Functional Evaluations and Rehabilitation Programs",
     },
     {
       title: "Emergency Medicine & Urgent Care",
-      desc: "High-volume, fast-turnaround billing for emergency visits, facility fees, and urgent care encounters.",
+      desc: "Emergency visit, facility fee, and urgent care encounter billing on a high-volume fast-turnaround basis",
     },
     {
       title: "OB/GYN & Women's Health",
-      desc: "Global maternity billing, gynecological procedures, preventive services, and prenatal care.",
+      desc: "Global billing for obstetrics, gynecological operations, preventive care, and prenatal services.",
     },
     {
       title: "Radiology & Imaging",
-      desc: "Technical and professional component billing for MRI, CT, X-Ray, and ultrasound services.",
+      desc: "MRI billing, CT billing, x-ray billing, ultrasound expert component professional and technical",
     },
     {
       title: "Home Health & Hospice",
-      desc: "Medicare and Medicaid billing for home health agencies, hospice providers, and DME.",
+      desc: "Home Health Agencies, Hospice Providers and DME Medicare & Medicaid Billing.",
     },
   ];
 
   const billingFlow = [
-    "Patient Demographics Review",
-    "Eligibility & Benefits Check",
-    "Charge Entry Validation",
-    "Coding & Modifier Review",
     "Claim Scrubbing",
     "Electronic Claim Submission",
     "Payment Posting",
@@ -299,12 +291,12 @@ export default function Billing() {
             <span>Medical Billing</span>
           </div>
 
-          <h1>Professional Medical Billing Services for Every Specialty</h1>
+          <h1>Professional Medical Billing Services for Every Specialty
+          </h1>
 
           <p>
-            Outsource medical billing to certified specialists — faster
-            reimbursements, fewer denials, and stronger collection performance
-            across multiple healthcare specialties.
+            Outsource medical billing to certified experts — quicker reimbursements, lower denials, and improved collection performance with multi-specialty healthcare.
+
           </p>
         </div>
       </section>
@@ -329,22 +321,14 @@ export default function Billing() {
           <div className="billing-copy billing-reveal">
             <span className="billing-kicker">Expert Billing</span>
 
-            <h2>Precision Billing That Maximizes Collections</h2>
+            <h2>Precision Billing That Maximizes Collections
+            </h2>
 
             <div className="billing-title-line" />
 
             <p>
-              Medical billing is not just about submitting claims — it is a
-              precision workflow that influences whether and when your practice
-              receives payment. Revno RCM helps healthcare providers reduce
-              billing friction, clean up claim workflows, and improve revenue
-              performance.
-            </p>
+              Medical billing is more than simply submitting claims — it is a precision workflow that can determine if and when your practice gets paid. Revno RCM reduces billing friction for providers, cleans up claim workflows and helps them in revenue performance.
 
-            <p>
-              Our billing specialists support claim creation, scrubbing,
-              submission, payment tracking, denial follow-up, and reporting so
-              your team can focus more on patient care.
             </p>
 
             <div className="billing-check-list">
@@ -361,23 +345,12 @@ export default function Billing() {
             </button>
           </div>
 
-          <div className="billing-image-wrap billing-reveal">
-            <img src={images.main} alt="Medical billing services by Revno RCM" />
-
-            <div className="billing-image-badge top">
-              <strong>Cleaner Claims</strong>
-              <span>Pre-submission review</span>
-            </div>
-
-            <div className="billing-image-badge middle">
-              <strong>Faster Payments</strong>
-              <span>Structured claim follow-up</span>
-            </div>
-
-            <div className="billing-image-badge bottom">
-              <strong>Lower Denials</strong>
-              <span>Better billing control</span>
-            </div>
+          <div className="billing-clean-image-wrap billing-reveal">
+            <img
+              src={images.main}
+              alt="Medical billing services by Revno RCM"
+              className="billing-clean-image"
+            />
           </div>
         </div>
       </section>
@@ -387,10 +360,11 @@ export default function Billing() {
         <div className="billing-container">
           <div className="billing-head billing-reveal">
             <span>Billing Workflow</span>
-            <h2>Built to Improve Claim Accuracy Before Submission</h2>
+            <h2>Built to Improve Claim Accuracy Before Submission
+            </h2>
             <p>
-              Every billing step is designed to reduce errors, improve claim
-              acceptance, and keep your revenue cycle moving.
+              Overall designed billing processes allow for less defects, enhanced claim acceptance and a consistently flowing revenue cycle.
+
             </p>
           </div>
 
@@ -423,14 +397,13 @@ export default function Billing() {
             <div className="billing-title-line" />
 
             <p>
-              Revno RCM connects patient information, eligibility checks, coding,
-              charge entry, claim submission, payment posting, and AR follow-up
-              into one organized billing process.
+              Revno RCM integrates end-to-end billing processes from collecting patient information, eligibility checks, coding to charge entry, claim submission, payment posting and AR follow-up all in one.
+
             </p>
 
             <p>
-              This structured workflow helps prevent missed charges, reduce
-              claim errors, and improve financial visibility for your practice.
+              This structured workflow prevents missed charges, minimizes claim denials and maximizes financial visibility for your practice.
+
             </p>
           </div>
 
@@ -452,8 +425,8 @@ export default function Billing() {
             <span>Specialties</span>
             <h2>Medical Billing Across Every Specialty</h2>
             <p>
-              Specialty-specific workflows help practices manage payer rules,
-              documentation standards, coding patterns, and claim requirements.
+              Workflows specific to specialties enable practices to address payer rules, documentation standards, coding patterns, and claim requirements.
+
             </p>
           </div>
 

@@ -110,6 +110,7 @@ export default function Home() {
 
   useEffect(() => {
     const revealItems = document.querySelectorAll(`
+        .hero-info-card,
     .rcm-text-block,
     .about-rcm-single-visual,
     .unify-expect-card,
@@ -662,7 +663,7 @@ export default function Home() {
 
         {/* HERO INFO */}
         <section className="hero-info-strip">
-          <div className="hero-info-card blue-dark">
+          <div className="hero-info-card blue-dark" style={{ "--case-delay": "0ms" }}>
             <h3>Online Appointment</h3>
             <p>Simple steps that you need to follow and get your appointment fixed online.</p>
             <button type="button" onClick={() => goToPage("/contact-us")}>
@@ -670,13 +671,13 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="hero-info-card sky-blue">
+          <div className="hero-info-card sky-blue" style={{ "--case-delay": "120ms" }}>
             <h3>24/7 Operation Reliability</h3>
             <p>With a rapid turnaround and 24/7 assistance, the operational dependability is outstanding.</p>
             <strong>+0 (000) 000-0000</strong>
           </div>
 
-          <div className="hero-info-card green">
+          <div className="hero-info-card green" style={{ "--case-delay": "240ms" }}>
             <h3>Qualified Professionals</h3>
             <p>Facility based knowledge and specialty-related experience enhances the financial well-being of your facility.</p>
             <button type="button" onClick={() => goToPage("/contact-us")}>

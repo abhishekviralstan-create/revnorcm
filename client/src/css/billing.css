@@ -906,3 +906,6 @@ button {
     align-items: flex-start;
   }
 }
+.billing-clean-image{
+  border-radius: 2rem;
+}

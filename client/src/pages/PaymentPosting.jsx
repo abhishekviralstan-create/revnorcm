@@ -13,9 +13,9 @@ import {
 } from "react-icons/fa";
 
 /* ORIGINAL IMAGES */
-import paymentPostingImg from "../assests/services/payment-posting.jpg";
-import rcmImg from "../assests/services/RCM.png";
-import reportingImg from "../assests/services/reporting-analytics.webp";
+import paymentPostingImg from "../assests/home/revenue.png";
+import rcmImg from "../assests/home/collage2.png";
+import reportingImg from "../assests/home/key.png";
 
 export default function PaymentPosting({ onNavigate }) {
   const navigate = useNavigate();
@@ -47,46 +47,46 @@ export default function PaymentPosting({ onNavigate }) {
   }, []);
 
   const features = [
-    "ERA processing for manual and auto remittance workflows",
-    "EOB posting for paper and scanned remittance documents",
-    "Patient payment posting from checks, cards, portals, and statements",
+    "ERA Processing Manual & Auto Remittance Workflows",
+    "Paper and Scanned Remittance Document EOB Posting",
+    "Check, card, portal and statement patient payments posting",
     "Write-offs and contractual adjustment processing",
     "Underpayment identification with payer-level reporting",
-    "Denial tagging for faster AR follow-up and appeals",
-    "Refund handling for secondary insurance and patient balances",
+    "Faster appeals and AR Follow-Up with Denial Tagging",
+    "Handle refunds for secondary insurance and patient balances",
     "Day-end reconciliation and deposit tracking",
     "Overpayment identification and refund support",
-    "Real-time posting for accurate patient and AR balances",
+    "Greater visibility for accurate patient and AR balances through real-time posting",
   ];
 
   const benefits = [
-    "Accurate AR aging with same-day or next-day posting",
-    "Underpayment detection and stronger revenue recovery",
-    "Clean reconciliation with fewer posting mismatches",
-    "Faster denial handling and appeal preparation",
-    "Daily payment visibility for better financial control",
+    "Timely / Accurate AR Aging- Same Day or next day posting.",
+    "Detecting underpayment, and increased income recovery",
+    "Less posting mismatches will allow for a clean reconciliation",
+    "Prompt resolution of denials and preparation of appeals",
+    "Enhance financial control with daily payment visibility",
   ];
 
   const processSteps = [
     {
       icon: <FaRegFileAlt />,
       title: "ERA & EOB Intake",
-      text: "We collect electronic and paper remittances, organize payment sources, and validate payer information before posting.",
+      text: "You take care of the collection process for electronic and paper remittances, organizing payment sources, confirming we have correct payer information to post.",
     },
     {
       icon: <FaMoneyBillWave />,
       title: "Accurate Posting",
-      text: "Insurance payments, patient payments, adjustments, write-offs, and transfers are posted with clean transaction mapping.",
+      text: "Cleared transaction mapping for insurance payments, patient payments, adjustments, write-offs and transfers.",
     },
     {
       icon: <FaShieldAlt />,
       title: "Denial & Variance Flagging",
-      text: "Denials, underpayments, overpayments, and unusual adjustments are tagged for quick review and follow-up.",
+      text: "Denials, underpayments, overpayments, and unusual adjustments are prioritized for fast review and follow-up.",
     },
     {
       icon: <FaChartPie />,
       title: "Daily Reconciliation",
-      text: "Deposits, batches, ERAs, EOBs, and posted amounts are reconciled to keep reporting accurate and transparent.",
+      text: "Reconciliation of deposits and batches, ERAs, EOBs and posted amounts ensures accurate reporting.",
     },
   ];
 
@@ -217,8 +217,8 @@ export default function PaymentPosting({ onNavigate }) {
             <h1 className="pp-reveal">Payment Posting Services</h1>
 
             <p className="pp-reveal">
-              Post every ERA, EOB, insurance payment, and patient payment accurately
-              with clean reconciliation and clearer revenue visibility.
+              Cleanly reconcile and gain visibility into the revenue that flows through every ERA, EOB, insurance payment, and patient payment.
+
             </p>
           </div>
         </section>
@@ -228,18 +228,18 @@ export default function PaymentPosting({ onNavigate }) {
           <div className="pp-container pp-split">
             <div className="pp-content pp-reveal pp-left">
               <span className="pp-kicker">Revenue Accuracy</span>
-              <h2>Payment Posting Is Your Financial Backbone</h2>
+              <h2>The Backbone Of Your Finances
+              </h2>
               <div className="pp-title-line" />
 
               <p>
-                Payment posting is not simply data entry. It is the foundation of accurate
-                AR, clean reporting, denial visibility, and faster follow-up. Incorrect or
-                delayed posting can hide underpayments and distort your financial picture.
+                It is not data entry, it is payment posting. This is where the key to accurate AR, clean reporting, denial visibility and quicker follow-up lies. Posting at the wrong time or not soon enough for example can mask underpayments and skew your financials.
+
               </p>
 
               <p>
-                Revno RCM ensures every insurance and patient payment is posted in the right
-                place with accurate adjustments, denial tagging, and deposit reconciliation.
+                With proper adjustments, very easy to tag denials and deposit reconciliation Revno RCM posts each insurance and patient payment exactly where it should be.
+
               </p>
 
               <button type="button" className="pp-primary-btn" onClick={() => goToPage("/contact-us")}>
@@ -249,10 +249,6 @@ export default function PaymentPosting({ onNavigate }) {
 
             <div className="pp-image-card pp-reveal pp-right">
               <img src={paymentPostingImg} alt="Payment posting services" />
-              <div className="pp-image-badge">
-                <strong>ERA + EOB Posting</strong>
-                <span>Accurate payments. Cleaner AR.</span>
-              </div>
             </div>
           </div>
         </section>
@@ -264,8 +260,8 @@ export default function PaymentPosting({ onNavigate }) {
               <span className="pp-kicker">What We Do</span>
               <h2>Complete Payment Posting Workflow</h2>
               <p>
-                A structured posting process that keeps your AR accurate, deposits reconciled,
-                and your revenue cycle team ready to act faster.
+                A posting process that keeps your AR accurate, reconciles deposits faster and prepares your revenue cycle team to take action sooner.
+
               </p>
             </div>
 
@@ -287,26 +283,22 @@ export default function PaymentPosting({ onNavigate }) {
           <div className="pp-container pp-split">
             <div className="pp-image-card pp-reveal pp-left">
               <img src={rcmImg} alt="Revenue cycle management payment posting" />
-              <div className="pp-image-badge">
-                <strong>Daily Reconciliation</strong>
-                <span>Balanced reports. Better control.</span>
-              </div>
+              
             </div>
 
             <div className="pp-content pp-reveal pp-right">
               <span className="pp-kicker">Why It Matters</span>
-              <h2>Accurate Posting Drives Smarter Financial Decisions</h2>
+              <h2>Smarter Financial Decisions</h2>
               <div className="pp-title-line" />
 
               <p>
-                Posting errors create a domino effect across AR, denial tracking,
-                patient balances, deposit reports, and revenue forecasting. A disciplined
-                cash posting process gives your team reliable data for faster action.
+                And ever posting errors have a cascading effect through AR, denial tracking, patient balances, deposit reports and revenue forecasting. Having a systematic cash posting process provides your team with accurate data that enables faster decision-making.
+
               </p>
 
               <p>
-                With Revno RCM, payment posting becomes more than a back-office task.
-                It becomes a revenue intelligence layer for your practice.
+                Payment posting with Revno RCM becomes more than a back-office operation. This provides the added component of a revenue intelligence layer for your practice.
+
               </p>
             </div>
           </div>
@@ -319,8 +311,8 @@ export default function PaymentPosting({ onNavigate }) {
               <span className="pp-kicker">Key Features & Capabilities</span>
               <h2>Accurate Payment Posting Support</h2>
               <p>
-                From remittance posting to denial identification, Revno RCM supports every
-                payment touchpoint with accuracy and transparency.
+                Revno RCM is built to handle every payment touchpoint from remittance posting and denial identification with clear visibility and accuracy.
+
               </p>
             </div>
 
@@ -340,7 +332,7 @@ export default function PaymentPosting({ onNavigate }) {
           <div className="pp-container pp-split">
             <div className="pp-content pp-reveal pp-left">
               <span className="pp-kicker">Key Benefits</span>
-              <h2>Cleaner Posting. Better Visibility. Faster Action.</h2>
+              <h2>Cleaner Posting. Faster Action.</h2>
               <div className="pp-title-line" />
 
               <div className="pp-benefit-list">
@@ -367,10 +359,10 @@ export default function PaymentPosting({ onNavigate }) {
         <section className="pp-cta">
           <div className="pp-container pp-cta-inner pp-reveal">
             <span className="pp-kicker">Free RCM Audit</span>
-            <h2>Fix Payment Posting Errors Before They Hurt Revenue</h2>
+            <h2>Repair Payment Posting Errors Before You Run into Problems with revenue
+            </h2>
             <p>
-              Let Revno RCM handle ERA posting, EOB posting, patient payments, adjustments,
-              denial tagging, and daily reconciliation with precision.
+              Let Revno RCM take care of ERA posting, EOB posting and patient payment, Adjustment and Denial tagging on a daily reconciliation basis.
             </p>
 
             <button type="button" onClick={() => goToPage("/contact-us")}>
