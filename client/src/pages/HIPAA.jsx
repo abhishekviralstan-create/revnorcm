@@ -2,7 +2,12 @@ import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../css/hippa.css";
-
+import {
+  FaShieldAlt,
+  FaLock,
+  FaUserShield,
+  FaClipboardCheck,
+} from "react-icons/fa";
 export default function HIPAA() {
   const navigate = useNavigate();
   const [activeFaq, setActiveFaq] = useState(0);
@@ -27,11 +32,6 @@ export default function HIPAA() {
     "Access control for patient data, billing records, and claim documents",
     "HIPAA-focused staff training and secure data handling practices",
     "Administrative safeguards for privacy, policies, and documentation",
-    "Technical safeguards for secure communication and digital workflows",
-    "Physical safeguards for controlled access and protected information",
-    "Regular monitoring to reduce privacy and compliance risks",
-    "Secure revenue cycle support for healthcare providers across the US",
-    "Compliance-focused billing processes designed to protect patient trust",
   ];
 
   const policies = [
@@ -54,7 +54,55 @@ export default function HIPAA() {
         "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80",
     },
   ];
+  const hipaaTrustItems = [
+    {
+      icon: <FaShieldAlt />,
+      title: "HIPAA",
+      text: "Compliant",
+    },
+    {
+      icon: <FaLock />,
+      title: "256-bit",
+      text: "Encryption",
+    },
+    {
+      icon: <FaUserShield />,
+      title: "Security & Privacy",
+      text: "By Design",
+    },
+    {
+      icon: <FaClipboardCheck />,
+      title: "Regular Risk",
+      text: "Assessments",
+    },
+  ];
 
+  const healthcareLogos = [
+    {
+      name: "Epic",
+      logo: "/hipaa-systems/epic.png",
+    },
+    {
+      name: "athenahealth",
+      logo: "/hipaa-systems/athenahealth.png",
+    },
+    {
+      name: "eClinicalWorks",
+      logo: "/hipaa-systems/eclinicalworks.png",
+    },
+    {
+      name: "Kareo",
+      logo: "/hipaa-systems/kareo.jpg",
+    },
+    {
+      name: "DrChrono",
+      logo: "/hipaa-systems/drchrono.webp",
+    },
+    {
+      name: "Nexgen",
+      logo: "/hipaa-systems/nexgen.png",
+    },
+  ];
   const benefits = [
     "HIPAA-compliant billing and RCM processes",
     "Secure handling of PHI and ePHI",
@@ -64,20 +112,20 @@ export default function HIPAA() {
     "Reliable compliance support for healthcare providers",
   ];
 
-  const trustStats = [
-    {
-      value: "PHI",
-      label: "Protected Health Information Handling",
-    },
-    {
-      value: "ePHI",
-      label: "Secure Electronic Patient Data Workflow",
-    },
-    {
-      value: "RCM",
-      label: "Compliance-Focused Billing Operations",
-    },
-  ];
+  // const trustStats = [
+  //   {
+  //     value: "PHI",
+  //     label: "Protected Health Information Handling",
+  //   },
+  //   {
+  //     value: "ePHI",
+  //     label: "Secure Electronic Patient Data Workflow",
+  //   },
+  //   {
+  //     value: "RCM",
+  //     label: "Compliance-Focused Billing Operations",
+  //   },
+  // ];
 
   const faqs = [
     {
@@ -295,28 +343,64 @@ export default function HIPAA() {
         </script>
       </Helmet>
 
-      {/* COMPACT HERO */}
-      <section className="hipaa-hero">
-        <div className="hipaa-container hipaa-reveal">
-          <div className="hipaa-breadcrumb">
+      <section className="hipaa-new-hero">
+        <img
+          className="hipaa-hero-bg-logo"
+          src="/hipaa-hero/hipaa-bg-logo.png"
+          alt=""
+          aria-hidden="true"
+        />
+
+        <div className="hipaa-new-lock-icon">
+          <FaLock />
+        </div>
+
+        <div className="hipaa-new-container">
+          <div className="hipaa-new-breadcrumb">
             <button type="button" onClick={() => goToPage("/")}>
               Home
             </button>
             <span>›</span>
-            <span>HIPAA Compliance</span>
+            <strong>HIPAA Compliance</strong>
           </div>
 
-          <h1>HIPAA-Compliant Medical Billing</h1>
+          <div className="hipaa-new-content">
+            <h1>HIPAA-Compliant Medical Billing</h1>
 
-          <p>
-            Protect patient data, reduce compliance risk, and manage medical
-            billing workflows with secure HIPAA-focused revenue cycle support.
-          </p>
+            <p>
+              Protect patient data, reduce compliance risk, and manage medical billing
+              workflows with secure, HIPAA-focused revenue cycle support.
+            </p>
+          </div>
+
+          <div className="hipaa-new-trust-row">
+            {hipaaTrustItems.map((item) => (
+              <div className="hipaa-new-trust-item" key={item.title}>
+                <div className="hipaa-new-trust-icon">{item.icon}</div>
+                <div>
+                  <strong>{item.title}</strong>
+                  <span>{item.text}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="hipaa-new-logo-area">
+            <span>We Work With Leading Healthcare Systems</span>
+
+            <div className="hipaa-new-logo-row">
+              {healthcareLogos.map((item) => (
+                <div className="hipaa-new-logo-card" key={item.name}>
+                  <img src={item.logo} alt={`${item.name} logo`} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* TRUST STRIP */}
-      <section className="hipaa-trust-strip">
+      {/* <section className="hipaa-trust-strip">
         <div className="hipaa-container">
           <div className="hipaa-trust-grid">
             {trustStats.map((item) => (
@@ -327,7 +411,7 @@ export default function HIPAA() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* WHAT WE DO */}
       <section className="hipaa-section hipaa-white">
@@ -636,9 +720,8 @@ export default function HIPAA() {
           <div className="hipaa-faq-list">
             {faqs.map((faq, index) => (
               <div
-                className={`hipaa-faq-item hipaa-reveal ${
-                  activeFaq === index ? "active" : ""
-                }`}
+                className={`hipaa-faq-item hipaa-reveal ${activeFaq === index ? "active" : ""
+                  }`}
                 key={faq.question}
               >
                 <button
